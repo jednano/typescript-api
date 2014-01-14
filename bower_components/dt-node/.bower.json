@@ -1,0 +1,19 @@
+{
+  "name": "dt-node",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "homepage": "https://github.com/jedhunsaker/dt-node",
+  "_release": "1130faf245",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "1130faf245fe14d484c4873d7b8855663ef8be25"
+  },
+  "_source": "https://github.com/jedhunsaker/dt-node.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/jedhunsaker/dt-node.git",
+  "_direct": true
+}

@@ -1,0 +1,29 @@
+{
+  "name": "typescript-api",
+  "version": "0.9.5",
+  "description": "TypeScript API exposed (includes definition file)",
+  "main": "wrapper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jedmao/typescript-api.git"
+  },
+  "keywords": [
+    "typescript",
+    "api",
+    "compiler",
+    "language",
+    "microsoft"
+  ],
+  "author": "Jed Mao <jed.hunsaker+npm@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jedmao/typescript-api/issues"
+  },
+  "homepage": "https://github.com/jedmao/typescript-api",
+  "dependencies": {
+    "typescript": "0.9.5"
+  }
+}
