@@ -1,6 +1,6 @@
 {
   "name": "typescript-api",
-  "version": "0.9.5",
+  "version": "0.9.7",
   "description": "TypeScript API exposed (includes definition file)",
   "main": "wrapper.js",
   "scripts": {
@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/jedmao/typescript-api",
   "dependencies": {
-    "typescript": "0.9.5"
+    "typescript": "0.9.7"
   }
 }
