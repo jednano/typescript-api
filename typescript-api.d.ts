@@ -42,7 +42,7 @@ declare module "typescript-api" {
 		Implementations_are_not_allowed_in_ambient_contexts: string;
 		declare_modifier_not_allowed_for_code_already_in_an_ambient_context: string;
 		Initializers_are_not_allowed_in_ambient_contexts: string;
-		Parameter_property_declarations_can_only_be_used_in_constructors: string;
+		Parameter_property_declarations_can_only_be_used_in_a_non_ambient_constructor_declaration: string;
 		Function_implementation_expected: string;
 		Constructor_implementation_expected: string;
 		Function_overload_name_must_be_0: string;
@@ -82,13 +82,15 @@ declare module "typescript-api" {
 		declare_modifier_not_allowed_on_import_declaration: string;
 		Function_overload_must_be_static: string;
 		Function_overload_must_not_be_static: string;
-		Parameter_property_declarations_cannot_be_used_in_an_ambient_context: string;
 		Parameter_property_declarations_cannot_be_used_in_a_constructor_overload: string;
 		Invalid_reference_directive_syntax: string;
 		Octal_literals_are_not_available_when_targeting_ECMAScript_5_and_higher: string;
 		Accessors_are_not_allowed_in_ambient_contexts: string;
 		_0_modifier_cannot_appear_on_a_constructor_declaration: string;
 		_0_modifier_cannot_appear_on_a_parameter: string;
+		Only_a_single_variable_declaration_is_allowed_in_a_for_in_statement: string;
+		Type_parameters_cannot_appear_on_a_constructor_declaration: string;
+		Type_annotation_cannot_appear_on_a_constructor_declaration: string;
 		Duplicate_identifier_0: string;
 		The_name_0_does_not_exist_in_the_current_scope: string;
 		The_name_0_does_not_refer_to_a_value: string;
@@ -184,14 +186,14 @@ declare module "typescript-api" {
 		Could_not_find_symbol_0: string;
 		get_and_set_accessor_must_have_the_same_type: string;
 		this_cannot_be_referenced_in_current_location: string;
-		Static_methods_cannot_reference_class_type_parameters: string;
+		Static_members_cannot_reference_class_type_parameters: string;
 		Class_0_is_recursively_referenced_as_a_base_type_of_itself: string;
 		Interface_0_is_recursively_referenced_as_a_base_type_of_itself: string;
 		super_property_access_is_permitted_only_in_a_constructor_member_function_or_member_accessor_of_a_derived_class: string;
 		super_cannot_be_referenced_in_non_derived_classes: string;
 		A_super_call_must_be_the_first_statement_in_the_constructor_when_a_class_contains_initialized_properties_or_has_parameter_properties: string;
 		Constructors_for_derived_classes_must_contain_a_super_call: string;
-		Super_calls_are_not_permitted_outside_constructors_or_in_local_functions_inside_constructors: string;
+		Super_calls_are_not_permitted_outside_constructors_or_in_nested_functions_inside_constructors: string;
 		_0_1_is_inaccessible: string;
 		this_cannot_be_referenced_within_module_bodies: string;
 		Invalid_expression_types_not_known_to_support_the_addition_operator: string;
@@ -204,11 +206,11 @@ declare module "typescript-api" {
 		The_left_hand_side_of_an_in_expression_must_be_of_types_any_string_or_number: string;
 		The_right_hand_side_of_an_in_expression_must_be_of_type_any_an_object_type_or_a_type_parameter: string;
 		The_left_hand_side_of_an_instanceof_expression_must_be_of_type_any_an_object_type_or_a_type_parameter: string;
-		The_right_hand_side_of_an_instanceof_expression_must_be_of_type_any_or_a_subtype_of_the_Function_interface_type: string;
+		The_right_hand_side_of_an_instanceof_expression_must_be_of_type_any_or_of_a_type_assignable_to_the_Function_interface_type: string;
 		Setters_cannot_return_a_value: string;
 		Tried_to_query_type_of_uninitialized_module_0: string;
 		Tried_to_set_variable_type_to_uninitialized_module_type_0: string;
-		Function_0_declared_a_non_void_return_type_but_has_no_return_expression: string;
+		Type_0_does_not_have_type_parameters: string;
 		Getters_must_return_a_value: string;
 		Getter_and_setter_accessors_do_not_agree_in_visibility: string;
 		Invalid_left_hand_side_of_assignment_expression: string;
@@ -235,7 +237,7 @@ declare module "typescript-api" {
 		Overload_signatures_must_all_be_exported_or_not_exported: string;
 		Overload_signatures_must_all_be_ambient_or_non_ambient: string;
 		Overload_signatures_must_all_be_optional_or_required: string;
-		Specialized_overload_signature_is_not_subtype_of_any_non_specialized_signature: string;
+		Specialized_overload_signature_is_not_assignable_to_any_non_specialized_signature: string;
 		this_cannot_be_referenced_in_constructor_arguments: string;
 		Instance_member_cannot_be_accessed_off_a_class: string;
 		Untyped_function_calls_may_not_accept_type_arguments: string;
@@ -246,14 +248,14 @@ declare module "typescript-api" {
 		Export_assignments_may_only_be_used_at_the_top_level_of_external_modules: string;
 		Export_assignments_may_only_be_made_with_variables_functions_classes_interfaces_enums_and_internal_modules: string;
 		Only_public_methods_of_the_base_class_are_accessible_via_the_super_keyword: string;
-		Numeric_indexer_type_0_must_be_a_subtype_of_string_indexer_type_1: string;
-		Numeric_indexer_type_0_must_be_a_subtype_of_string_indexer_type_1_NL_2: string;
-		All_numerically_named_properties_must_be_subtypes_of_numeric_indexer_type_0: string;
-		All_numerically_named_properties_must_be_subtypes_of_numeric_indexer_type_0_NL_1: string;
-		All_named_properties_must_be_subtypes_of_string_indexer_type_0: string;
-		All_named_properties_must_be_subtypes_of_string_indexer_type_0_NL_1: string;
+		Numeric_indexer_type_0_must_be_assignable_to_string_indexer_type_1: string;
+		Numeric_indexer_type_0_must_be_assignable_to_string_indexer_type_1_NL_2: string;
+		All_numerically_named_properties_must_be_assignable_to_numeric_indexer_type_0: string;
+		All_numerically_named_properties_must_be_assignable_to_numeric_indexer_type_0_NL_1: string;
+		All_named_properties_must_be_assignable_to_string_indexer_type_0: string;
+		All_named_properties_must_be_assignable_to_string_indexer_type_0_NL_1: string;
 		Generic_type_references_must_include_all_type_arguments: string;
-		Default_arguments_are_not_allowed_in_an_overload_parameter: string;
+		Default_arguments_are_only_allowed_in_implementation: string;
 		Overloads_cannot_differ_only_by_return_type: string;
 		Function_expression_declared_a_non_void_return_type_but_has_no_return_expression: string;
 		Import_declaration_referencing_identifier_from_internal_module_can_only_be_made_with_variables_functions_classes_interfaces_enums_and_internal_modules: string;
@@ -265,7 +267,7 @@ declare module "typescript-api" {
 		Exported_import_declaration_0_is_assigned_type_that_has_or_is_using_private_type_1: string;
 		Exported_import_declaration_0_is_assigned_type_that_is_using_inaccessible_module_1: string;
 		Exported_import_declaration_0_is_assigned_container_that_is_or_is_using_inaccessible_module_1: string;
-		Type_reference_0_in_extends_clause_does_not_reference_constructor_function_for_1: string;
+		Type_name_0_in_extends_clause_does_not_reference_constructor_function_for_1: string;
 		Internal_module_reference_0_in_import_declaration_does_not_reference_module_instance_for_1: string;
 		Module_0_cannot_merge_with_previous_declaration_of_1_in_a_different_file_2: string;
 		Interface_0_cannot_simultaneously_extend_types_1_and_2_NL_3: string;
@@ -308,6 +310,13 @@ declare module "typescript-api" {
 		Type_of_conditional_0_must_be_identical_to_1_or_2: string;
 		Type_of_conditional_0_must_be_identical_to_1_2_or_3: string;
 		Duplicate_identifier_0_Compiler_reserves_name_1_in_top_level_scope_of_an_external_module: string;
+		Constraint_of_a_type_parameter_cannot_reference_any_type_parameter_from_the_same_type_parameter_list: string;
+		Initializer_of_instance_member_variable_0_cannot_reference_identifier_1_declared_in_the_constructor: string;
+		Parameter_0_cannot_be_referenced_in_its_initializer: string;
+		Duplicate_string_index_signature: string;
+		Duplicate_number_index_signature: string;
+		All_declarations_of_an_interface_must_have_identical_type_parameters: string;
+		Expression_resolves_to_variable_declaration_i_that_compiler_uses_to_initialize_rest_parameter: string;
 		Type_0_is_missing_property_1_from_type_2: string;
 		Types_of_property_0_of_types_1_and_2_are_incompatible: string;
 		Types_of_property_0_of_types_1_and_2_are_incompatible_NL_3: string;
@@ -332,20 +341,23 @@ declare module "typescript-api" {
 		Types_of_static_property_0_of_class_1_and_class_2_are_incompatible_NL_3: string;
 		Type_reference_cannot_refer_to_container_0: string;
 		Type_reference_must_refer_to_type: string;
-		Enums_with_multiple_declarations_must_provide_an_initializer_for_the_first_enum_element: string;
+		In_enums_with_multiple_declarations_only_one_declaration_can_omit_an_initializer_for_the_first_enum_element: string;
 		_0_overload_s: string;
 		Variable_declaration_cannot_have_the_same_name_as_an_import_declaration: string;
 		Signature_expected_0_type_arguments_got_1_instead: string;
 		Property_0_defined_as_optional_in_type_1_but_is_required_in_type_2: string;
-		Types_0_and_1_originating_in_inifinitely_expanding_type_reference_do_not_refer_to_same_named_type: string;
-		Types_0_and_1_originating_in_inifinitely_expanding_type_reference_have_incompatible_type_arguments: string;
-		Types_0_and_1_originating_in_inifinitely_expanding_type_reference_have_incompatible_type_arguments_NL_2: string;
-		Types_of_property_0_of_types_1_and_2_are_not_identical: string;
+		Types_0_and_1_originating_in_infinitely_expanding_type_reference_do_not_refer_to_same_named_type: string;
+		Types_0_and_1_originating_in_infinitely_expanding_type_reference_have_incompatible_type_arguments: string;
+		Types_0_and_1_originating_in_infinitely_expanding_type_reference_have_incompatible_type_arguments_NL_2: string;
+		Named_properties_0_of_types_1_and_2_are_not_identical: string;
 		Types_of_string_indexer_of_types_0_and_1_are_not_identical: string;
 		Types_of_number_indexer_of_types_0_and_1_are_not_identical: string;
-		Type_of_number_indexer_in_type_0_is_not_a_subtype_of_string_indexer_type_in_type_1_NL_2: string;
-		Type_of_property_0_in_type_1_is_not_a_subtype_of_string_indexer_type_in_type_2_NL_3: string;
-		Type_of_property_0_in_type_1_is_not_a_subtype_of_number_indexer_type_in_type_2_NL_3: string;
+		Type_of_number_indexer_in_type_0_is_not_assignable_to_string_indexer_type_in_type_1_NL_2: string;
+		Type_of_property_0_in_type_1_is_not_assignable_to_string_indexer_type_in_type_2_NL_3: string;
+		Type_of_property_0_in_type_1_is_not_assignable_to_number_indexer_type_in_type_2_NL_3: string;
+		Static_property_0_defined_as_private_in_type_1_is_defined_as_public_in_type_2: string;
+		Static_property_0_defined_as_public_in_type_1_is_defined_as_private_in_type_2: string;
+		Types_0_and_1_define_static_property_2_as_private: string;
 		Current_host_does_not_support_0_option: string;
 		ECMAScript_target_version_0_not_supported_Specify_a_valid_target_version_1_default_or_2: string;
 		Module_code_generation_0_not_supported: string;
@@ -405,6 +417,7 @@ declare module "typescript-api" {
 		DIRECTORY: string;
 		NUMBER: string;
 		Specify_the_codepage_to_use_when_opening_source_files: string;
+		Additional_locations: string;
 		This_version_of_the_Javascript_runtime_does_not_support_the_0_function: string;
 		Unknown_rule: string;
 		Invalid_line_number_0: string;
@@ -421,12 +434,14 @@ declare module "typescript-api" {
 		Lambda_Function_which_lacks_return_type_annotation_implicitly_has_an_any_return_type: string;
 		Array_Literal_implicitly_has_an_any_type_from_widening: string;
 		_0_which_lacks_get_accessor_and_parameter_type_annotation_on_set_accessor_implicitly_has_an_any_type: string;
+		Index_signature_of_object_type_implicitly_has_an_any_type: string;
+		Object_literal_s_property_0_implicitly_has_an_any_type_from_widening: string;
 	};
 	class ArrayUtilities {
 		static isArray(value: any): boolean;
 		static sequenceEquals<T>(array1: T[], array2: T[], equals: (v1: T, v2: T) => boolean): boolean;
 		static contains<T>(array: T[], value: T): boolean;
-		static groupBy(array: any[], func: (v: any) => string): any;
+		static groupBy<T>(array: T[], func: (v: T) => string): any;
 		static distinct<T>(array: T[], equalsFn?: (a: T, b: T) => boolean): T[];
 		static min<T>(array: T[], func: (v: T) => number): number;
 		static max<T>(array: T[], func: (v: T) => number): number;
@@ -477,21 +492,27 @@ declare module "typescript-api" {
 		static assert(expression: any, message?: string, verboseDebugInfo?: () => string): void;
 		static fail(message?: string): void;
 	}
-	var LocalizedDiagnosticMessages: any;
-	class Diagnostic {
+	var LocalizedDiagnosticMessages: IIndexable<any>;
+	class Location {
 		private _fileName;
 		private _lineMap;
 		private _start;
 		private _length;
-		private _diagnosticKey;
-		private _arguments;
-		constructor(fileName: string, lineMap: LineMap, start: number, length: number, diagnosticKey: string, arguments?: any[]);
-		public toJSON(key: any): any;
+		constructor(fileName: string, lineMap: LineMap, start: number, length: number);
 		public fileName(): string;
+		public lineMap(): LineMap;
 		public line(): number;
 		public character(): number;
 		public start(): number;
 		public length(): number;
+		static equals(location1: Location, location2: Location): boolean;
+	}
+	class Diagnostic extends Location {
+		private _diagnosticKey;
+		private _arguments;
+		private _additionalLocations;
+		constructor(fileName: string, lineMap: LineMap, start: number, length: number, diagnosticKey: string, _arguments?: any[], additionalLocations?: Location[]);
+		public toJSON(key: any): any;
 		public diagnosticKey(): string;
 		public arguments(): any[];
 		/**
@@ -539,6 +560,38 @@ declare module "typescript-api" {
 		static expandPrime(oldSize: number): number;
 		static combine(value: number, currentHash: number): number;
 	}
+	module Collections {
+		var DefaultHashTableCapacity: number;
+		class HashTable<TKey, TValue> {
+			private hash;
+			private entries;
+			private count;
+			constructor(capacity: number, hash: (k: TKey) => number);
+			public set(key: TKey, value: TValue): void;
+			public add(key: TKey, value: TValue): void;
+			public containsKey(key: TKey): boolean;
+			public get(key: TKey): TValue;
+			private computeHashCode(key);
+			private addOrSet(key, value, throwOnExistingEntry);
+			private findEntry(key, hashCode);
+			private addEntry(key, value, hashCode);
+			private grow();
+		}
+		function createHashTable<TKey, TValue>(capacity?: number, hash?: (k: TKey) => number): HashTable<TKey, TValue>;
+		function identityHashCode(value: any): number;
+		var DefaultStringTableCapacity: number;
+		class StringTable {
+			private entries;
+			private count;
+			constructor(capacity: number);
+			public addCharArray(key: number[], start: number, len: number): string;
+			private findCharArrayEntry(key, start, len, hashCode);
+			private addEntry(text, hashCode);
+			private grow();
+			private static textCharArrayEquals(text, array, start, length);
+		}
+		var DefaultStringTable: StringTable;
+	}
 	var nodeMakeDirectoryTime: number;
 	var nodeCreateBufferTime: number;
 	var nodeWriteFileSyncTime: number;
@@ -569,6 +622,9 @@ declare module "typescript-api" {
 		newLine: string;
 	}
 	var Environment: IEnvironment;
+	interface IIndexable<T> {
+		[s: string]: T;
+	}
 	module IntegerUtilities {
 		function integerDivide(numerator: number, denominator: number): number;
 		function integerMultiplyLow32Bits(n1: number, n2: number): number;
@@ -640,1688 +696,7 @@ declare module "typescript-api" {
 		Message = 2,
 		NoPrefix = 3,
 	}
-	var diagnosticInformationMap: {
-		"error TS{0}: {1}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"warning TS{0}: {1}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Unrecognized escape sequence.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Unexpected character {0}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Missing close quote character.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Identifier expected.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'{0}' keyword expected.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'{0}' expected.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Identifier expected; '{0}' is a keyword.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Automatic semicolon insertion not allowed.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Unexpected token; '{0}' expected.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Trailing separator not allowed.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'*/' expected.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'public' or 'private' modifier must precede 'static'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Unexpected token.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Catch clause parameter cannot have a type annotation.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Rest parameter must be last in list.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter cannot have question mark and initializer.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Required parameter cannot follow optional parameter.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Index signatures cannot have rest parameters.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Index signature parameter cannot have accessibility modifiers.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Index signature parameter cannot have a question mark.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Index signature parameter cannot have an initializer.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Index signature must have a type annotation.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Index signature parameter must have a type annotation.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Index signature parameter type must be 'string' or 'number'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'extends' clause already seen.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'extends' clause must precede 'implements' clause.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Classes can only extend a single class.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'implements' clause already seen.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Accessibility modifier already seen.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'{0}' modifier must precede '{1}' modifier.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'{0}' modifier already seen.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'{0}' modifier cannot appear on a class element.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Interface declaration cannot have 'implements' clause.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'super' invocation cannot have type arguments.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Only ambient modules can use quoted names.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Statements are not allowed in ambient contexts.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Implementations are not allowed in ambient contexts.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'declare' modifier not allowed for code already in an ambient context.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Initializers are not allowed in ambient contexts.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter property declarations can only be used in constructors.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Function implementation expected.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Constructor implementation expected.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Function overload name must be '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'{0}' modifier cannot appear on a module element.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'declare' modifier cannot appear on an interface declaration.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'declare' modifier required for top level element.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Rest parameter cannot be optional.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Rest parameter cannot have an initializer.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'set' accessor must have one and only one parameter.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'set' accessor parameter cannot be optional.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'set' accessor parameter cannot have an initializer.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'set' accessor cannot have rest parameter.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'get' accessor cannot have parameters.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Modifiers cannot appear here.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Accessors are only available when targeting ECMAScript 5 and higher.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Class name cannot be '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Interface name cannot be '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Enum name cannot be '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Module name cannot be '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Enum member must have initializer.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Export assignment cannot be used in internal modules.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Export assignment not allowed in module with exported element.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Module cannot have multiple export assignments.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Ambient enum elements can only have integer literal initializers.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"module, class, interface, enum, import or statement": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"constructor, function, accessor or variable": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"statement": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"case or default clause": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"identifier": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"call, construct, index, property or function signature": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"expression": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"type name": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"property or accessor": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"parameter": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"type": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"type parameter": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'declare' modifier not allowed on import declaration.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Function overload must be static.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Function overload must not be static.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter property declarations cannot be used in an ambient context.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter property declarations cannot be used in a constructor overload.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Invalid 'reference' directive syntax.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Octal literals are not available when targeting ECMAScript 5 and higher.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Accessors are not allowed in ambient contexts.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'{0}' modifier cannot appear on a constructor declaration.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'{0}' modifier cannot appear on a parameter.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Duplicate identifier '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"The name '{0}' does not exist in the current scope.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"The name '{0}' does not refer to a value.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'super' can only be used inside a class instance method.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"The left-hand side of an assignment expression must be a variable, property or indexer.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Value of type '{0}' is not callable. Did you mean to include 'new'?": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Value of type '{0}' is not callable.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Value of type '{0}' is not newable.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Value of type '{0}' is not indexable by type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Operator '{0}' cannot be applied to types '{1}' and '{2}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Operator '{0}' cannot be applied to types '{1}' and '{2}': {3}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Cannot convert '{0}' to '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Cannot convert '{0}' to '{1}':{NL}{2}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Expected var, class, interface, or module.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Operator '{0}' cannot be applied to type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Getter '{0}' already declared.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Setter '{0}' already declared.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Exported class '{0}' extends private class '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Exported class '{0}' implements private interface '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Exported interface '{0}' extends private interface '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Exported class '{0}' extends class from inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Exported class '{0}' implements interface from inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Exported interface '{0}' extends interface from inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Public static property '{0}' of exported class has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Public property '{0}' of exported class has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Property '{0}' of exported interface has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Exported variable '{0}' has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Public static property '{0}' of exported class is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Public property '{0}' of exported class is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Property '{0}' of exported interface is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Exported variable '{0}' is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of constructor from exported class has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of public static property setter from exported class has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of public property setter from exported class has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of constructor signature from exported interface has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of call signature from exported interface has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of public static method from exported class has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of public method from exported class has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of method from exported interface has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of exported function has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of constructor from exported class is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of public static property setter from exported class is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of public property setter from exported class is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of constructor signature from exported interface is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of call signature from exported interface is using inaccessible module {1}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of public static method from exported class is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of public method from exported class is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of method from exported interface is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of exported function is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of public static property getter from exported class has or is using private type '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of public property getter from exported class has or is using private type '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of constructor signature from exported interface has or is using private type '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of call signature from exported interface has or is using private type '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of index signature from exported interface has or is using private type '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of public static method from exported class has or is using private type '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of public method from exported class has or is using private type '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of method from exported interface has or is using private type '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of exported function has or is using private type '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of public static property getter from exported class is using inaccessible module {0}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of public property getter from exported class is using inaccessible module {0}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of constructor signature from exported interface is using inaccessible module {0}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of call signature from exported interface is using inaccessible module {0}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of index signature from exported interface is using inaccessible module {0}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of public static method from exported class is using inaccessible module {0}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of public method from exported class is using inaccessible module {0}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of method from exported interface is using inaccessible module {0}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of exported function is using inaccessible module {0}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'new T[]' cannot be used to create an array. Use 'new Array<T>()' instead.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"A parameter list must follow a generic type argument list. '(' expected.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Multiple constructor implementations are not allowed.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Unable to resolve external module '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Module cannot be aliased to a non-module type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"A class may only extend another class.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"A class may only implement another class or interface.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"An interface may only extend another class or interface.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Unable to resolve type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Unable to resolve type of '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Unable to resolve type parameter constraint.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Type parameter constraint cannot be a primitive type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Supplied parameters do not match any signature of call target.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Supplied parameters do not match any signature of call target:{NL}{0}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Invalid 'new' expression.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Call signatures used in a 'new' expression must have a 'void' return type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Could not select overload for 'new' expression.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Type '{0}' does not satisfy the constraint '{1}' for type parameter '{2}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Could not select overload for 'call' expression.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Cannot invoke an expression whose type lacks a call signature.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Calls to 'super' are only valid inside a class.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Generic type '{0}' requires {1} type argument(s).": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Type of array literal cannot be determined. Best common type could not be found for array elements.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Could not find enclosing symbol for dotted name '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"The property '{0}' does not exist on value of type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Could not find symbol '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'get' and 'set' accessor must have the same type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'this' cannot be referenced in current location.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Static methods cannot reference class type parameters.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Class '{0}' is recursively referenced as a base type of itself.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Interface '{0}' is recursively referenced as a base type of itself.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'super' property access is permitted only in a constructor, member function, or member accessor of a derived class.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'super' cannot be referenced in non-derived classes.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"A 'super' call must be the first statement in the constructor when a class contains initialized properties or has parameter properties.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Constructors for derived classes must contain a 'super' call.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Super calls are not permitted outside constructors or in local functions inside constructors.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'{0}.{1}' is inaccessible.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'this' cannot be referenced within module bodies.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Invalid '+' expression - types not known to support the addition operator.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"The right-hand side of an arithmetic operation must be of type 'any', 'number' or an enum type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"The left-hand side of an arithmetic operation must be of type 'any', 'number' or an enum type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"The type of a unary arithmetic operation operand must be of type 'any', 'number' or an enum type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Variable declarations of a 'for' statement cannot use a type annotation.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Variable declarations of a 'for' statement must be of types 'string' or 'any'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"The right-hand side of a 'for...in' statement must be of type 'any', an object type or a type parameter.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"The left-hand side of an 'in' expression must be of types 'any', 'string' or 'number'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"The right-hand side of an 'in' expression must be of type 'any', an object type or a type parameter.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"The left-hand side of an 'instanceof' expression must be of type 'any', an object type or a type parameter.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"The right-hand side of an 'instanceof' expression must be of type 'any' or a subtype of the 'Function' interface type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Setters cannot return a value.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Tried to query type of uninitialized module '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Tried to set variable type to uninitialized module type '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Function '{0}' declared a non-void return type, but has no return expression.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Getters must return a value.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Getter and setter accessors do not agree in visibility.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Invalid left-hand side of assignment expression.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Function declared a non-void return type, but has no return expression.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Cannot resolve return type reference.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Constructors cannot have a return type of 'void'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Subsequent variable declarations must have the same type.  Variable '{0}' must be of type '{1}', but here has type '{2}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"All symbols within a with block will be resolved to 'any'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Import declarations in an internal module cannot reference an external module.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Class {0} declares interface {1} but does not implement it:{NL}{2}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Class {0} declares class {1} as an interface but does not implement it:{NL}{2}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"The operand of an increment or decrement operator must be a variable, property or indexer.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'this' cannot be referenced in static initializers in a class body.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Class '{0}' cannot extend class '{1}':{NL}{2}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Interface '{0}' cannot extend class '{1}':{NL}{2}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Interface '{0}' cannot extend interface '{1}':{NL}{2}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Duplicate overload signature for '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Duplicate constructor overload signature.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Duplicate overload call signature.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Duplicate overload construct signature.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Overload signature is not compatible with function definition.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Overload signature is not compatible with function definition:{NL}{0}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Overload signatures must all be public or private.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Overload signatures must all be exported or not exported.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Overload signatures must all be ambient or non-ambient.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Overload signatures must all be optional or required.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Specialized overload signature is not subtype of any non-specialized signature.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'this' cannot be referenced in constructor arguments.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Instance member cannot be accessed off a class.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Untyped function calls may not accept type arguments.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Non-generic functions may not accept type arguments.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"A generic type may not reference itself with a wrapped form of its own type parameters.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Rest parameters must be array types.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Overload signature implementation cannot use specialized type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Export assignments may only be used at the top-level of external modules.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Export assignments may only be made with variables, functions, classes, interfaces, enums and internal modules.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Only public methods of the base class are accessible via the 'super' keyword.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Numeric indexer type '{0}' must be a subtype of string indexer type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Numeric indexer type '{0}' must be a subtype of string indexer type '{1}':{NL}{2}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"All numerically named properties must be subtypes of numeric indexer type '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"All numerically named properties must be subtypes of numeric indexer type '{0}':{NL}{1}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"All named properties must be subtypes of string indexer type '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"All named properties must be subtypes of string indexer type '{0}':{NL}{1}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Generic type references must include all type arguments.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Default arguments are not allowed in an overload parameter.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Overloads cannot differ only by return type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Function expression declared a non-void return type, but has no return expression.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Import declaration referencing identifier from internal module can only be made with variables, functions, classes, interfaces, enums and internal modules.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Could not find symbol '{0}' in module '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Unable to resolve module reference '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Could not find module '{0}' in module '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Exported import declaration '{0}' is assigned value with type that has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Exported import declaration '{0}' is assigned value with type that is using inaccessible module '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Exported import declaration '{0}' is assigned type that has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Exported import declaration '{0}' is assigned type that is using inaccessible module '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Exported import declaration '{0}' is assigned container that is or is using inaccessible module '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Type reference '{0}' in extends clause does not reference constructor function for '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Internal module reference '{0}' in import declaration does not reference module instance for '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Module '{0}' cannot merge with previous declaration of '{1}' in a different file '{2}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Interface '{0}' cannot simultaneously extend types '{1}' and '{2}':{NL}{3}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Initializer of parameter '{0}' cannot reference identifier '{1}' declared after it.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Ambient external module declaration cannot be reopened.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"All declarations of merged declaration '{0}' must be exported or not exported.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'super' cannot be referenced in constructor arguments.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Return type of constructor signature must be assignable to the instance type of the class.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Ambient external module declaration must be defined in global context.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Ambient external module declaration cannot specify relative module name.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Import declaration in an ambient external module declaration cannot reference external module through relative external module name.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Could not find the best common type of types of all return statement expressions.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Import declaration cannot refer to external module reference when --noResolve option is set.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Duplicate identifier '_this'. Compiler uses variable declaration '_this' to capture 'this' reference.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'continue' statement can only be used within an enclosing iteration statement.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'break' statement can only be used within an enclosing iteration or switch statement.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Jump target not found.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Jump target cannot cross function boundary.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Duplicate identifier '_super'. Compiler uses '_super' to capture base class reference.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Expression resolves to variable declaration '_this' that compiler uses to capture 'this' reference.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Expression resolves to '_super' that compiler uses to capture base class reference.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"TypeParameter '{0}' of constructor signature from exported interface has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"TypeParameter '{0}' of call signature from exported interface has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"TypeParameter '{0}' of public static method from exported class has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"TypeParameter '{0}' of public method from exported class has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"TypeParameter '{0}' of method from exported interface has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"TypeParameter '{0}' of exported function has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"TypeParameter '{0}' of constructor signature from exported interface is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"TypeParameter '{0}' of call signature from exported interface is using inaccessible module {1}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"TypeParameter '{0}' of public static method from exported class is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"TypeParameter '{0}' of public method from exported class is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"TypeParameter '{0}' of method from exported interface is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"TypeParameter '{0}' of exported function is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"TypeParameter '{0}' of exported class has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"TypeParameter '{0}' of exported interface has or is using private type '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"TypeParameter '{0}' of exported class is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"TypeParameter '{0}' of exported interface is using inaccessible module {1}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Duplicate identifier '_i'. Compiler uses '_i' to initialize rest parameter.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Duplicate identifier 'arguments'. Compiler uses 'arguments' to initialize rest parameters.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Type of conditional '{0}' must be identical to '{1}' or '{2}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Type of conditional '{0}' must be identical to '{1}', '{2}' or '{3}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Duplicate identifier '{0}'. Compiler reserves name '{1}' in top level scope of an external module.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Type '{0}' is missing property '{1}' from type '{2}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Types of property '{0}' of types '{1}' and '{2}' are incompatible.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Types of property '{0}' of types '{1}' and '{2}' are incompatible:{NL}{3}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Property '{0}' defined as private in type '{1}' is defined as public in type '{2}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Property '{0}' defined as public in type '{1}' is defined as private in type '{2}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Types '{0}' and '{1}' define property '{2}' as private.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Call signatures of types '{0}' and '{1}' are incompatible.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Call signatures of types '{0}' and '{1}' are incompatible:{NL}{2}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Type '{0}' requires a call signature, but type '{1}' lacks one.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Construct signatures of types '{0}' and '{1}' are incompatible.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Construct signatures of types '{0}' and '{1}' are incompatible:{NL}{2}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Type '{0}' requires a construct signature, but type '{1}' lacks one.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Index signatures of types '{0}' and '{1}' are incompatible.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Index signatures of types '{0}' and '{1}' are incompatible:{NL}{2}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Call signature expects {0} or fewer parameters.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Could not apply type '{0}' to argument {1} which is of type '{2}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Class '{0}' defines instance member accessor '{1}', but extended class '{2}' defines it as instance member function.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Class '{0}' defines instance member property '{1}', but extended class '{2}' defines it as instance member function.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Class '{0}' defines instance member function '{1}', but extended class '{2}' defines it as instance member accessor.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Class '{0}' defines instance member function '{1}', but extended class '{2}' defines it as instance member property.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Types of static property '{0}' of class '{1}' and class '{2}' are incompatible.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Types of static property '{0}' of class '{1}' and class '{2}' are incompatible:{NL}{3}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Type reference cannot refer to container '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Type reference must refer to type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Enums with multiple declarations must provide an initializer for the first enum element.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		" (+ {0} overload(s))": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Variable declaration cannot have the same name as an import declaration.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Signature expected {0} type arguments, got {1} instead.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Property '{0}' defined as optional in type '{1}', but is required in type '{2}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Types '{0}' and '{1}' originating in inifinitely expanding type reference do not refer to same named type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Types '{0}' and '{1}' originating in inifinitely expanding type reference have incompatible type arguments.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Types '{0}' and '{1}' originating in inifinitely expanding type reference have incompatible type arguments:{NL}{2}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Types of property '{0}' of types '{1}' and '{2}' are not identical.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Types of string indexer of types '{0}' and '{1}' are not identical.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Types of number indexer of types '{0}' and '{1}' are not identical.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Type of number indexer in type '{0}' is not a subtype of string indexer type in type '{1}'.{NL}{2}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Type of property '{0}' in type '{1}' is not a subtype of string indexer type in type '{2}'.{NL}{3}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Type of property '{0}' in type '{1}' is not a subtype of number indexer type in type '{2}'.{NL}{3}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Current host does not support '{0}' option.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"ECMAScript target version '{0}' not supported.  Specify a valid target version: '{1}' (default), or '{2}'": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Module code generation '{0}' not supported.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Could not find file: '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"A file cannot have a reference to itself.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Cannot resolve referenced file: '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Cannot find the common subdirectory path for the input files.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Emit Error: {0}.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Cannot read file '{0}': {1}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Unsupported file encoding.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Locale must be of the form <language> or <language>-<territory>. For example '{0}' or '{1}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Unsupported locale: '{0}'.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Execution Failed.{NL}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Invalid call to 'up'": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Invalid call to 'down'": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Base64 value '{0}' finished with a continuation bit.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Unknown option '{0}'": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Expected {0} arguments to message, got {1} instead.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Expected the message '{0}' to have {1} arguments, but it had {2}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Could not delete file '{0}'": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Could not create directory '{0}'": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Error while executing file '{0}': ": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Cannot compile external modules unless the '--module' flag is provided.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Option mapRoot cannot be specified without specifying sourcemap option.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Option sourceRoot cannot be specified without specifying sourcemap option.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Options mapRoot and sourceRoot cannot be specified without specifying sourcemap option.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Option '{0}' specified without '{1}'": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'codepage' option not supported on current platform.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Concatenate and emit output to single file.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Generates corresponding {0} file.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Specifies the location where debugger should locate map files instead of generated locations.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Specifies the location where debugger should locate TypeScript files instead of source locations.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Watch input files.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Redirect output structure to the directory.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Do not emit comments to output.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Skip resolution and preprocessing.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Specify ECMAScript target version: '{0}' (default), or '{1}'": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Specify module code generation: '{0}' or '{1}'": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Print this message.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Print the compiler's version: {0}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Allow use of deprecated '{0}' keyword when referencing an external module.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Specify locale for errors and messages. For example '{0}' or '{1}'": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Syntax:   {0}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"options": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"file1": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Examples:": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Options:": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Insert command line options and files from a file.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Version {0}": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Use the '{0}' flag to see options.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"{NL}Recompiling ({0}):": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"STRING": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"KIND": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"file2": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"VERSION": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"LOCATION": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"DIRECTORY": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"NUMBER": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Specify the codepage to use when opening source files.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"This version of the Javascript runtime does not support the '{0}' function.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Unknown rule.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Invalid line number ({0})": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Warn on expressions and declarations with an implied 'any' type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Variable '{0}' implicitly has an 'any' type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of '{1}' implicitly has an 'any' type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of function type implicitly has an 'any' type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Member '{0}' of object type implicitly has an 'any' type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'new' expression, which lacks a constructor signature, implicitly has an 'any' type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'{0}', which lacks return-type annotation, implicitly has an 'any' return type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Function expression, which lacks return-type annotation, implicitly has an 'any' return type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Parameter '{0}' of lambda function implicitly has an 'any' type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Constructor signature, which lacks return-type annotation, implicitly has an 'any' return type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Lambda Function, which lacks return-type annotation, implicitly has an 'any' return type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"Array Literal implicitly has an 'any' type from widening.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-		"'{0}', which lacks 'get' accessor and parameter type annotation on 'set' accessor, implicitly has an 'any' type.": {
-			"code": number;
-			"category": DiagnosticCategory;
-		};
-	};
+	var diagnosticInformationMap: IIndexable<any>;
 	enum CharacterCodes {
 		nullCharacter = 0,
 		maxAsciiCharacter = 127,
@@ -2521,6 +896,23 @@ declare module "typescript-api" {
 		function fromScriptSnapshot(scriptSnapshot: IScriptSnapshot): LineMap;
 		function fromString(text: string): LineMap;
 	}
+	module TextFactory {
+		function createText(value: string): IText;
+	}
+	module SimpleText {
+		function fromString(value: string): ISimpleText;
+		function fromScriptSnapshot(scriptSnapshot: IScriptSnapshot): ISimpleText;
+	}
+	module TextUtilities {
+		interface ICharacterSequence {
+			charCodeAt(index: number): number;
+			length: number;
+		}
+		function parseLineStarts(text: ICharacterSequence): number[];
+		function getLengthOfLineBreakSlow(text: ICharacterSequence, index: number, c: number): number;
+		function getLengthOfLineBreak(text: ICharacterSequence, index: number): number;
+		function isAnyLineBreakCharacter(c: number): boolean;
+	}
 	class TextSpan {
 		private _start;
 		private _length;
@@ -2634,6 +1026,15 @@ declare module "typescript-api" {
 		NodeParsedInStrictModeMask = 4,
 		NodeFullWidthShift = 3,
 		IsVariableWidthKeyword,
+	}
+	module Indentation {
+		function columnForEndOfToken(token: ISyntaxToken, syntaxInformationMap: SyntaxInformationMap, options: FormattingOptions): number;
+		function columnForStartOfToken(token: ISyntaxToken, syntaxInformationMap: SyntaxInformationMap, options: FormattingOptions): number;
+		function columnForStartOfFirstTokenInLineContainingToken(token: ISyntaxToken, syntaxInformationMap: SyntaxInformationMap, options: FormattingOptions): number;
+		function columnForPositionInString(input: string, position: number, options: FormattingOptions): number;
+		function indentationString(column: number, options: FormattingOptions): string;
+		function indentationTrivia(column: number, options: FormattingOptions): ISyntaxTrivia;
+		function firstNonWhitespacePosition(value: string): number;
 	}
 	enum LanguageVersion {
 		EcmaScript3 = 0,
@@ -2984,7 +1385,7 @@ declare module "typescript-api" {
 		public absoluteIndex(): number;
 		public setAbsoluteIndex(index: number): void;
 		public scan(diagnostics: Diagnostic[], allowRegularExpression: boolean): ISyntaxToken;
-		private createToken(fullStart, leadingTriviaInfo, start, kind, end, trailingTriviaInfo, isVariableWidthKeyword);
+		private createToken(fullStart, leadingTriviaInfo, start, kind, end, fullEnd, trailingTriviaInfo, isVariableWidthKeyword);
 		private static triviaWindow;
 		static scanTrivia(text: ISimpleText, start: number, length: number, isTrailing: boolean): ISyntaxTriviaList;
 		private scanTrivia(underlyingText, underlyingTextStart, isTrailing);
@@ -3050,6 +1451,7 @@ declare module "typescript-api" {
 		nonSeparatorAt(index: number): ISyntaxNodeOrToken;
 		insertChildrenInto(array: ISyntaxElement[], index: number): void;
 	}
+
 	interface ISlidingWindowSource {
 		fetchMoreItems(argument: any, sourceIndex: number, window: any[], destinationIndex: number, spaceAvailable: number): number;
 	}
@@ -3973,9 +2375,9 @@ declare module "typescript-api" {
 	class ArgumentListSyntax extends SyntaxNode {
 		public typeArgumentList: TypeArgumentListSyntax;
 		public openParenToken: ISyntaxToken;
-		public arguments: ISeparatedSyntaxList;
 		public closeParenToken: ISyntaxToken;
-		constructor(typeArgumentList: TypeArgumentListSyntax, openParenToken: ISyntaxToken, arguments: ISeparatedSyntaxList, closeParenToken: ISyntaxToken, parsedInStrictMode: boolean);
+		public arguments: ISeparatedSyntaxList;
+		constructor(typeArgumentList: TypeArgumentListSyntax, openParenToken: ISyntaxToken, _arguments: ISeparatedSyntaxList, closeParenToken: ISyntaxToken, parsedInStrictMode: boolean);
 		public accept(visitor: ISyntaxVisitor): any;
 		public kind(): SyntaxKind;
 		public childCount(): number;
@@ -4271,24 +2673,24 @@ declare module "typescript-api" {
 	class ConstructorDeclarationSyntax extends SyntaxNode implements IClassElementSyntax {
 		public modifiers: ISyntaxList;
 		public constructorKeyword: ISyntaxToken;
-		public parameterList: ParameterListSyntax;
+		public callSignature: CallSignatureSyntax;
 		public block: BlockSyntax;
 		public semicolonToken: ISyntaxToken;
-		constructor(modifiers: ISyntaxList, constructorKeyword: ISyntaxToken, parameterList: ParameterListSyntax, block: BlockSyntax, semicolonToken: ISyntaxToken, parsedInStrictMode: boolean);
+		constructor(modifiers: ISyntaxList, constructorKeyword: ISyntaxToken, callSignature: CallSignatureSyntax, block: BlockSyntax, semicolonToken: ISyntaxToken, parsedInStrictMode: boolean);
 		public accept(visitor: ISyntaxVisitor): any;
 		public kind(): SyntaxKind;
 		public childCount(): number;
 		public childAt(slot: number): ISyntaxElement;
 		public isClassElement(): boolean;
-		public update(modifiers: ISyntaxList, constructorKeyword: ISyntaxToken, parameterList: ParameterListSyntax, block: BlockSyntax, semicolonToken: ISyntaxToken): ConstructorDeclarationSyntax;
-		static create(constructorKeyword: ISyntaxToken, parameterList: ParameterListSyntax): ConstructorDeclarationSyntax;
+		public update(modifiers: ISyntaxList, constructorKeyword: ISyntaxToken, callSignature: CallSignatureSyntax, block: BlockSyntax, semicolonToken: ISyntaxToken): ConstructorDeclarationSyntax;
+		static create(constructorKeyword: ISyntaxToken, callSignature: CallSignatureSyntax): ConstructorDeclarationSyntax;
 		static create1(): ConstructorDeclarationSyntax;
 		public withLeadingTrivia(trivia: ISyntaxTriviaList): ConstructorDeclarationSyntax;
 		public withTrailingTrivia(trivia: ISyntaxTriviaList): ConstructorDeclarationSyntax;
 		public withModifiers(modifiers: ISyntaxList): ConstructorDeclarationSyntax;
 		public withModifier(modifier: ISyntaxToken): ConstructorDeclarationSyntax;
 		public withConstructorKeyword(constructorKeyword: ISyntaxToken): ConstructorDeclarationSyntax;
-		public withParameterList(parameterList: ParameterListSyntax): ConstructorDeclarationSyntax;
+		public withCallSignature(callSignature: CallSignatureSyntax): ConstructorDeclarationSyntax;
 		public withBlock(block: BlockSyntax): ConstructorDeclarationSyntax;
 		public withSemicolonToken(semicolonToken: ISyntaxToken): ConstructorDeclarationSyntax;
 		public isTypeScriptSpecific(): boolean;
@@ -5576,6 +3978,10 @@ declare module "typescript-api" {
 		constructor(maximumDepth: number);
 		public visitNode(node: SyntaxNode): void;
 	}
+	module Parser {
+		function parse(fileName: string, text: ISimpleText, isDeclaration: boolean, options: ParseOptions): SyntaxTree;
+		function incrementalParse(oldSyntaxTree: SyntaxTree, textChangeRange: TextChangeRange, newText: ISimpleText): SyntaxTree;
+	}
 	class SyntaxTree {
 		private _sourceUnit;
 		private _isDeclaration;
@@ -5649,21 +4055,21 @@ declare module "typescript-api" {
 		private _lineMap;
 		private _declASTMap;
 		private _astDeclMap;
-		private _isExternalModule;
 		private _amdDependencies;
+		private _externalModuleIndicatorSpan;
 		constructor(_compiler: TypeScriptCompiler, _semanticInfoChain: SemanticInfoChain, fileName: string, referencedFiles: string[], _scriptSnapshot: IScriptSnapshot, byteOrderMark: ByteOrderMark, version: number, isOpen: boolean, _syntaxTree: SyntaxTree, _topLevelDecl: PullDecl);
 		public invalidate(): void;
 		public isDeclareFile(): boolean;
 		private cacheSyntaxTreeInfo(syntaxTree);
-		private getLeadingComments(node);
 		private getAmdDependency(comment);
-		private hasImplicitImport(sourceUnitLeadingComments);
-		private getImplicitImport(comment);
-		private hasTopLevelImportOrExport(node);
+		private getImplicitImportSpan(sourceUnitLeadingTrivia);
+		private getImplicitImportSpanWorker(trivia, position);
+		private getTopLevelImportOrExportSpan(node);
 		public sourceUnit(): SourceUnit;
 		public diagnostics(): Diagnostic[];
 		public lineMap(): LineMap;
 		public isExternalModule(): boolean;
+		public externalModuleIndicatorSpan(): TextSpan;
 		public amdDependencies(): string[];
 		public syntaxTree(): SyntaxTree;
 		public bloomFilter(): BloomFilter;
@@ -5692,9 +4098,6 @@ declare module "typescript-api" {
 		Unspecified = 0,
 		Synchronous = 1,
 		Asynchronous = 2,
-	}
-	interface IIndexable<T> {
-		[s: string]: T;
 	}
 	function createIntrinsicsObject<T>(): IIndexable<T>;
 	interface IHashTable<T> {
@@ -5765,6 +4168,7 @@ declare module "typescript-api" {
 		public setPostComments(comments: Comment[]): void;
 		public width(): number;
 		public structuralEquals(ast: AST, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	interface IASTToken extends AST {
 		text(): string;
@@ -5798,8 +4202,9 @@ declare module "typescript-api" {
 	}
 	class SourceUnit extends AST {
 		public moduleElements: ISyntaxList2;
+		public endOfFileTokenLeadingComments: Comment[];
 		private _fileName;
-		constructor(moduleElements: ISyntaxList2, _fileName: string);
+		constructor(moduleElements: ISyntaxList2, endOfFileTokenLeadingComments: Comment[], _fileName: string);
 		public fileName(): string;
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: SourceUnit, includingPosition: boolean): boolean;
@@ -5812,6 +4217,7 @@ declare module "typescript-api" {
 		public valueText(): string;
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: Identifier, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class LiteralExpression extends AST {
 		private _nodeType;
@@ -5822,6 +4228,7 @@ declare module "typescript-api" {
 		public valueText(): string;
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: ParenthesizedExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class ThisExpression extends AST implements IASTToken {
 		private _text;
@@ -5831,6 +4238,7 @@ declare module "typescript-api" {
 		public valueText(): string;
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: ParenthesizedExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class SuperExpression extends AST implements IASTToken {
 		private _text;
@@ -5840,6 +4248,7 @@ declare module "typescript-api" {
 		public valueText(): string;
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: ParenthesizedExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class NumericLiteral extends AST implements IASTToken {
 		private _value;
@@ -5851,6 +4260,7 @@ declare module "typescript-api" {
 		public value(): any;
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: NumericLiteral, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class RegularExpressionLiteral extends AST implements IASTToken {
 		private _text;
@@ -5859,6 +4269,7 @@ declare module "typescript-api" {
 		public text(): string;
 		public valueText(): string;
 		public kind(): SyntaxKind;
+		public isExpression(): boolean;
 	}
 	class StringLiteral extends AST implements IASTToken {
 		private _text;
@@ -5868,6 +4279,7 @@ declare module "typescript-api" {
 		public valueText(): string;
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: StringLiteral, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class TypeAnnotation extends AST {
 		public type: AST;
@@ -5990,16 +4402,19 @@ declare module "typescript-api" {
 		constructor(_nodeType: SyntaxKind, operand: AST);
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: PrefixUnaryExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class ArrayLiteralExpression extends AST {
 		public expressions: ISeparatedSyntaxList2;
 		constructor(expressions: ISeparatedSyntaxList2);
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: ArrayLiteralExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class OmittedExpression extends AST {
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: CatchClause, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class ParenthesizedExpression extends AST {
 		public openParenTrailingComments: Comment[];
@@ -6007,6 +4422,7 @@ declare module "typescript-api" {
 		constructor(openParenTrailingComments: Comment[], expression: AST);
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: ParenthesizedExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	interface ICallExpression extends IASTSpan {
 		expression: AST;
@@ -6018,6 +4434,7 @@ declare module "typescript-api" {
 		public expression: AST;
 		constructor(identifier: Identifier, block: Block, expression: AST);
 		public kind(): SyntaxKind;
+		public isExpression(): boolean;
 	}
 	class ParenthesizedArrowFunctionExpression extends AST {
 		public callSignature: CallSignature;
@@ -6025,6 +4442,7 @@ declare module "typescript-api" {
 		public expression: AST;
 		constructor(callSignature: CallSignature, block: Block, expression: AST);
 		public kind(): SyntaxKind;
+		public isExpression(): boolean;
 	}
 	class QualifiedName extends AST {
 		public left: AST;
@@ -6107,6 +4525,7 @@ declare module "typescript-api" {
 		constructor(expression: AST, name: Identifier);
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: MemberAccessExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class PostfixUnaryExpression extends AST {
 		private _nodeType;
@@ -6114,6 +4533,7 @@ declare module "typescript-api" {
 		constructor(_nodeType: SyntaxKind, operand: AST);
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: PostfixUnaryExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class ElementAccessExpression extends AST {
 		public expression: AST;
@@ -6121,6 +4541,7 @@ declare module "typescript-api" {
 		constructor(expression: AST, argumentExpression: AST);
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: ElementAccessExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class InvocationExpression extends AST implements ICallExpression {
 		public expression: AST;
@@ -6128,12 +4549,13 @@ declare module "typescript-api" {
 		constructor(expression: AST, argumentList: ArgumentList);
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: InvocationExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class ArgumentList extends AST {
 		public typeArgumentList: TypeArgumentList;
-		public arguments: ISeparatedSyntaxList2;
 		public closeParenToken: ASTSpan;
-		constructor(typeArgumentList: TypeArgumentList, arguments: ISeparatedSyntaxList2, closeParenToken: ASTSpan);
+		public arguments: ISeparatedSyntaxList2;
+		constructor(typeArgumentList: TypeArgumentList, _arguments: ISeparatedSyntaxList2, closeParenToken: ASTSpan);
 		public kind(): SyntaxKind;
 	}
 	class BinaryExpression extends AST {
@@ -6143,6 +4565,7 @@ declare module "typescript-api" {
 		constructor(_nodeType: SyntaxKind, left: AST, right: AST);
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: BinaryExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class ConditionalExpression extends AST {
 		public condition: AST;
@@ -6151,6 +4574,7 @@ declare module "typescript-api" {
 		constructor(condition: AST, whenTrue: AST, whenFalse: AST);
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: ConditionalExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class ConstructSignature extends AST {
 		public callSignature: CallSignature;
@@ -6217,9 +4641,9 @@ declare module "typescript-api" {
 		public structuralEquals(ast: ExpressionStatement, includingPosition: boolean): boolean;
 	}
 	class ConstructorDeclaration extends AST {
-		public parameterList: ParameterList;
+		public callSignature: CallSignature;
 		public block: Block;
-		constructor(parameterList: ParameterList, block: Block);
+		constructor(callSignature: CallSignature, block: Block);
 		public kind(): SyntaxKind;
 	}
 	class MemberFunctionDeclaration extends AST {
@@ -6276,6 +4700,7 @@ declare module "typescript-api" {
 		constructor(expression: AST, argumentList: ArgumentList);
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: ObjectCreationExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class SwitchStatement extends AST {
 		public expression: AST;
@@ -6362,12 +4787,14 @@ declare module "typescript-api" {
 		constructor(type: AST, expression: AST);
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: CastExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class ObjectLiteralExpression extends AST {
 		public propertyAssignments: ISeparatedSyntaxList2;
 		constructor(propertyAssignments: ISeparatedSyntaxList2);
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: ObjectLiteralExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class SimplePropertyAssignment extends AST {
 		public propertyName: Identifier;
@@ -6388,6 +4815,7 @@ declare module "typescript-api" {
 		public block: Block;
 		constructor(identifier: Identifier, callSignature: CallSignature, block: Block);
 		public kind(): SyntaxKind;
+		public isExpression(): boolean;
 	}
 	class EmptyStatement extends AST {
 		public kind(): SyntaxKind;
@@ -6435,18 +4863,21 @@ declare module "typescript-api" {
 		constructor(expression: AST);
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: TypeOfExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class DeleteExpression extends AST {
 		public expression: AST;
 		constructor(expression: AST);
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: DeleteExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class VoidExpression extends AST {
 		public expression: AST;
 		constructor(expression: AST);
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: VoidExpression, includingPosition: boolean): boolean;
+		public isExpression(): boolean;
 	}
 	class DebuggerStatement extends AST {
 		public kind(): SyntaxKind;
@@ -6463,22 +4894,6 @@ declare module "typescript-api" {
 		public kind(): SyntaxKind;
 		public structuralEquals(ast: Comment, includingPosition: boolean): boolean;
 	}
-	function diagnosticFromDecl(decl: PullDecl, diagnosticKey: string, arguments?: any[]): Diagnostic;
-	function scriptIsElided(sourceUnit: SourceUnit): boolean;
-	function moduleIsElided(declaration: ModuleDeclaration): boolean;
-	function enumIsElided(declaration: EnumDeclaration): boolean;
-	function importDeclarationIsElided(importDeclAST: ImportDeclaration, semanticInfoChain: SemanticInfoChain, compilationSettings?: ImmutableCompilationSettings): boolean;
-	function isValidAstNode(ast: IASTSpan): boolean;
-	function getAstAtPosition(script: AST, pos: number, useTrailingTriviaAsLimChar?: boolean, forceInclusive?: boolean): AST;
-	function getExtendsHeritageClause(clauses: ISyntaxList2): HeritageClause;
-	function getImplementsHeritageClause(clauses: ISyntaxList2): HeritageClause;
-	function isCallExpression(ast: AST): boolean;
-	function isCallExpressionTarget(ast: AST): boolean;
-	function isDeclarationASTOrDeclarationNameAST(ast: AST): boolean;
-	function isNameOfFunction(ast: AST): boolean;
-	function isNameOfMemberFunction(ast: AST): boolean;
-	function isNameOfMemberAccessExpression(ast: AST): boolean;
-	function isRightSideOfQualifiedName(ast: AST): boolean;
 	interface IParameters {
 		length: number;
 		lastParameterIsRest(): boolean;
@@ -6489,20 +4904,38 @@ declare module "typescript-api" {
 		initializerAt(index: number): EqualsValueClause;
 		isOptionalAt(index: number): boolean;
 	}
-	module Parameters {
-		function fromIdentifier(id: Identifier): IParameters;
-		function fromParameter(parameter: Parameter): IParameters;
-		function fromParameterList(list: ParameterList): IParameters;
+	module ASTHelpers {
+		function scriptIsElided(sourceUnit: SourceUnit): boolean;
+		function moduleIsElided(declaration: ModuleDeclaration): boolean;
+		function enumIsElided(declaration: EnumDeclaration): boolean;
+		function isValidAstNode(ast: IASTSpan): boolean;
+		function getAstAtPosition(script: AST, pos: number, useTrailingTriviaAsLimChar?: boolean, forceInclusive?: boolean): AST;
+		function getExtendsHeritageClause(clauses: ISyntaxList2): HeritageClause;
+		function getImplementsHeritageClause(clauses: ISyntaxList2): HeritageClause;
+		function isCallExpression(ast: AST): boolean;
+		function isCallExpressionTarget(ast: AST): boolean;
+		function isDeclarationASTOrDeclarationNameAST(ast: AST): boolean;
+		function getEnclosingParameterForInitializer(ast: AST): Parameter;
+		function getEnclosingMemberVariableDeclaration(ast: AST): MemberVariableDeclaration;
+		function isNameOfFunction(ast: AST): boolean;
+		function isNameOfMemberFunction(ast: AST): boolean;
+		function isNameOfMemberAccessExpression(ast: AST): boolean;
+		function isRightSideOfQualifiedName(ast: AST): boolean;
+		function parametersFromIdentifier(id: Identifier): IParameters;
+		function parametersFromParameter(parameter: Parameter): IParameters;
+		function parametersFromParameterList(list: ParameterList): IParameters;
+		function isDeclarationAST(ast: AST): boolean;
+		function docComments(ast: AST): Comment[];
+		function getParameterList(ast: AST): ParameterList;
+		function getType(ast: AST): AST;
+		function getVariableDeclaratorModifiers(variableDeclarator: VariableDeclarator): PullElementFlags[];
+		function isIntegerLiteralAST(expression: AST): boolean;
+		function getEnclosingModuleDeclaration(ast: AST): ModuleDeclaration;
+		function isLastNameOfModule(ast: ModuleDeclaration, astName: AST): boolean;
+		function isAnyNameOfModule(ast: ModuleDeclaration, astName: AST): boolean;
+		function getNameOfIdenfierOrQualifiedName(name: AST): string;
+		function getModuleNames(name: AST, result?: Identifier[]): Identifier[];
 	}
-	function isDeclarationAST(ast: AST): boolean;
-	function docComments(ast: AST): Comment[];
-	function getParameterList(ast: AST): ParameterList;
-	function getType(ast: AST): AST;
-	function getVariableDeclaratorModifiers(variableDeclarator: VariableDeclarator): PullElementFlags[];
-	function isIntegerLiteralAST(expression: AST): boolean;
-	function getEnclosingModuleDeclaration(ast: AST): ModuleDeclaration;
-	function isLastNameOfModule(ast: ModuleDeclaration, astName: AST): boolean;
-	function isAnyNameOfModule(ast: ModuleDeclaration, astName: AST): boolean;
 	class AstWalkOptions {
 		public goChildren: boolean;
 		public stopWalking: boolean;
@@ -6630,16 +5063,16 @@ declare module "typescript-api" {
 		public captureThisStmtString: string;
 		private currentVariableDeclaration;
 		private declStack;
-		private exportAssignmentIdentifier;
+		private exportAssignment;
 		private inWithBlock;
 		public document: Document;
-		private copyrightElement;
+		private detachedCommentsElement;
 		constructor(emittingFileName: string, outfile: TextWriter, emitOptions: EmitOptions, semanticInfoChain: SemanticInfoChain);
 		private pushDecl(decl);
 		private popDecl(decl);
 		private getEnclosingDecl();
-		public setExportAssignmentIdentifier(id: string): void;
-		public getExportAssignmentIdentifier(): string;
+		public setExportAssignment(exportAssignment: ExportAssignment): void;
+		public getExportAssignment(): ExportAssignment;
 		public setDocument(document: Document): void;
 		public shouldEmitImportDeclaration(importDeclAST: ImportDeclaration): boolean;
 		public emitImportDeclaration(importDeclAST: ImportDeclaration): void;
@@ -6676,7 +5109,7 @@ declare module "typescript-api" {
 		public shouldCaptureThis(ast: AST): boolean;
 		public emitEnum(moduleDecl: EnumDeclaration): void;
 		private getModuleDeclToVerifyChildNameCollision(moduleDecl, changeNameIfAnyDeclarationInContext);
-		private hasChildNameCollision(moduleName, childDecls);
+		private hasChildNameCollision(moduleName, parentDecl);
 		private getModuleName(moduleDecl, changeNameIfAnyDeclarationInContext?);
 		private emitModuleDeclarationWorker(moduleDecl);
 		public emitSingleModuleDeclaration(moduleDecl: ModuleDeclaration, moduleName: IASTToken): void;
@@ -6696,9 +5129,7 @@ declare module "typescript-api" {
 		private emitMemberVariableDeclaration(varDecl);
 		public emitVariableDeclarator(varDecl: VariableDeclarator): void;
 		private symbolIsUsedInItsEnclosingContainer(symbol, dynamic?);
-		private getPotentialDeclPathInfoForEmit(pullSymbol);
-		private emitDottedNameFromDeclPath(declPath, startingIndex, lastIndex);
-		private emitSymbolContainerNameInEnclosingContext(pullSymbol);
+		private shouldQualifySymbolNameWithParentName(symbol);
 		private getSymbolForEmit(ast);
 		public emitName(name: Identifier, addThis: boolean): void;
 		public recordSourceMappingNameStart(name: string): void;
@@ -6713,8 +5144,9 @@ declare module "typescript-api" {
 		public emitSeparatedList(list: ISeparatedSyntaxList2, useNewLineSeparator?: boolean, startInclusive?: number, endExclusive?: number): void;
 		private isDirectivePrologueElement(node);
 		public emitSpaceBetweenConstructs(node1: AST, node2: AST): void;
-		private getCopyrightComments();
+		private getDetachedComments(element);
 		private emitPossibleCopyrightHeaders(script);
+		private emitDetachedComments(list);
 		public emitScriptElements(sourceUnit: SourceUnit): void;
 		public emitConstructorStatements(funcDecl: ConstructorDeclaration): void;
 		public emitJavascript(ast: AST, startLine: boolean): void;
@@ -6738,9 +5170,8 @@ declare module "typescript-api" {
 		public emitDeleteExpression(expression: DeleteExpression): void;
 		public emitVoidExpression(expression: VoidExpression): void;
 		private canEmitDottedNameMemberAccessExpression(expression);
-		private emitDottedNameMemberAccessExpressionWorker(expression, potentialPath, startingIndex, lastIndex);
-		private emitDottedNameMemberAccessExpressionRecurse(expression, potentialPath, startingIndex, lastIndex);
 		private emitDottedNameMemberAccessExpression(expression);
+		private emitDottedNameMemberAccessExpressionRecurse(expression);
 		public emitMemberAccessExpression(expression: MemberAccessExpression): void;
 		public emitQualifiedName(name: QualifiedName): void;
 		public emitBinaryExpression(expression: BinaryExpression): void;
@@ -6957,11 +5388,10 @@ declare module "typescript-api" {
 		private emitDeclarationsForClassDeclaration(classDecl);
 		private emitHeritageClauses(clauses);
 		private emitHeritageClause(clause);
-		private getEnclosingContainer(ast);
+		static getEnclosingContainer(ast: AST): AST;
 		private emitTypeParameters(typeParams, funcSignature?);
 		private emitDeclarationsForInterfaceDeclaration(interfaceDecl);
 		private emitDeclarationsForImportDeclaration(importDeclAST);
-		public getFullName(name: AST): string;
 		private emitDeclarationsForEnumDeclaration(moduleDecl);
 		private emitDeclarationsForModuleDeclaration(moduleDecl);
 		private emitDeclarationsForExportAssignment(ast);
@@ -7026,6 +5456,7 @@ declare module "typescript-api" {
 		public useCaseSensitiveFileResolution: boolean;
 		public gatherDiagnostics: boolean;
 		public codepage: number;
+		public createFileLog: boolean;
 	}
 	class ImmutableCompilationSettings {
 		private static _defaultSettings;
@@ -7047,6 +5478,7 @@ declare module "typescript-api" {
 		private _useCaseSensitiveFileResolution;
 		private _gatherDiagnostics;
 		private _codepage;
+		private _createFileLog;
 		public propagateEnumConstants(): boolean;
 		public removeComments(): boolean;
 		public watch(): boolean;
@@ -7065,7 +5497,8 @@ declare module "typescript-api" {
 		public useCaseSensitiveFileResolution(): boolean;
 		public gatherDiagnostics(): boolean;
 		public codepage(): number;
-		constructor(propagateEnumConstants: boolean, removeComments: boolean, watch: boolean, noResolve: boolean, allowAutomaticSemicolonInsertion: boolean, noImplicitAny: boolean, noLib: boolean, codeGenTarget: LanguageVersion, moduleGenTarget: ModuleGenTarget, outFileOption: string, outDirOption: string, mapSourceFiles: boolean, mapRoot: string, sourceRoot: string, generateDeclarationFiles: boolean, useCaseSensitiveFileResolution: boolean, gatherDiagnostics: boolean, codepage: number);
+		public createFileLog(): boolean;
+		constructor(propagateEnumConstants: boolean, removeComments: boolean, watch: boolean, noResolve: boolean, allowAutomaticSemicolonInsertion: boolean, noImplicitAny: boolean, noLib: boolean, codeGenTarget: LanguageVersion, moduleGenTarget: ModuleGenTarget, outFileOption: string, outDirOption: string, mapSourceFiles: boolean, mapRoot: string, sourceRoot: string, generateDeclarationFiles: boolean, useCaseSensitiveFileResolution: boolean, gatherDiagnostics: boolean, codepage: number, createFileLog: boolean);
 		static defaultSettings(): ImmutableCompilationSettings;
 		static fromCompilationSettings(settings: CompilationSettings): ImmutableCompilationSettings;
 		public toCompilationSettings(): any;
@@ -7137,27 +5570,26 @@ declare module "typescript-api" {
 		SomeTypeReference,
 		SomeInstantiatableType,
 	}
-	var pullDeclID: number;
 	class PullDecl {
 		public kind: PullElementKind;
 		public name: string;
 		private declDisplayName;
+		public semanticInfoChain: SemanticInfoChain;
 		public declID: number;
 		public flags: PullElementFlags;
-		private span;
 		private declGroups;
 		private childDecls;
 		private typeParameters;
 		private synthesizedValDecl;
+		private containerDecl;
 		public childDeclTypeCache: IIndexable<PullDecl[]>;
 		public childDeclValueCache: IIndexable<PullDecl[]>;
 		public childDeclNamespaceCache: IIndexable<PullDecl[]>;
 		public childDeclTypeParameterCache: IIndexable<PullDecl[]>;
-		constructor(declName: string, displayName: string, kind: PullElementKind, declFlags: PullElementFlags, span: TextSpan);
+		constructor(declName: string, displayName: string, kind: PullElementKind, declFlags: PullElementFlags, semanticInfoChain: SemanticInfoChain);
 		public fileName(): string;
 		public getParentPath(): PullDecl[];
 		public getParentDecl(): PullDecl;
-		public semanticInfoChain(): SemanticInfoChain;
 		public isExternalModule(): boolean;
 		public getEnclosingDecl(): PullDecl;
 		public _getEnclosingDeclFromParentDecl(): PullDecl;
@@ -7166,7 +5598,7 @@ declare module "typescript-api" {
 		*/
 		public getDisplayName(): string;
 		public setSymbol(symbol: PullSymbol): void;
-		public ensureSymbolIsBound(bindSignatureSymbol?: boolean): void;
+		public ensureSymbolIsBound(): void;
 		public getSymbol(): PullSymbol;
 		public hasSymbol(): boolean;
 		public setSignatureSymbol(signatureSymbol: PullSignatureSymbol): void;
@@ -7174,10 +5606,9 @@ declare module "typescript-api" {
 		public hasSignatureSymbol(): boolean;
 		public setFlags(flags: PullElementFlags): void;
 		public setFlag(flags: PullElementFlags): void;
-		public getSpan(): TextSpan;
 		public setValueDecl(valDecl: PullDecl): void;
 		public getValueDecl(): PullDecl;
-		public isEqual(other: PullDecl): boolean;
+		public getContainerDecl(): PullDecl;
 		private getChildDeclCache(declKind);
 		public addChildDecl(childDecl: PullDecl): void;
 		public searchChildDecls(declName: string, searchKind: PullElementKind): PullDecl[];
@@ -7188,44 +5619,44 @@ declare module "typescript-api" {
 		public hasBeenBound(): boolean;
 		public isSynthesized(): boolean;
 		public ast(): AST;
+		public isRootDecl(): void;
 	}
 	class RootPullDecl extends PullDecl {
-		private _semanticInfoChain;
 		private _isExternalModule;
 		private _fileName;
-		constructor(name: string, fileName: string, kind: PullElementKind, declFlags: PullElementFlags, span: TextSpan, semanticInfoChain: SemanticInfoChain, isExternalModule: boolean);
+		constructor(name: string, fileName: string, kind: PullElementKind, declFlags: PullElementFlags, semanticInfoChain: SemanticInfoChain, isExternalModule: boolean);
 		public fileName(): string;
 		public getParentPath(): PullDecl[];
 		public getParentDecl(): PullDecl;
-		public semanticInfoChain(): SemanticInfoChain;
 		public isExternalModule(): boolean;
 		public getEnclosingDecl(): RootPullDecl;
+		public isRootDecl(): boolean;
 	}
 	class NormalPullDecl extends PullDecl {
 		private parentDecl;
+		public _rootDecl: RootPullDecl;
 		private parentPath;
-		constructor(declName: string, displayName: string, kind: PullElementKind, declFlags: PullElementFlags, parentDecl: PullDecl, span: TextSpan, addToParent?: boolean);
+		constructor(declName: string, displayName: string, kind: PullElementKind, declFlags: PullElementFlags, parentDecl: PullDecl, addToParent?: boolean);
 		public fileName(): string;
 		public getParentDecl(): PullDecl;
 		public getParentPath(): PullDecl[];
-		public semanticInfoChain(): SemanticInfoChain;
 		public isExternalModule(): boolean;
 		public getEnclosingDecl(): PullDecl;
+		public isRootDecl(): boolean;
 	}
 	class PullEnumElementDecl extends NormalPullDecl {
 		public constantValue: number;
-		constructor(declName: string, displayName: string, parentDecl: PullDecl, span: TextSpan);
+		constructor(declName: string, displayName: string, parentDecl: PullDecl);
 	}
 	class PullFunctionExpressionDecl extends NormalPullDecl {
 		private functionExpressionName;
-		constructor(expressionName: string, declFlags: PullElementFlags, parentDecl: PullDecl, span: TextSpan, displayName?: string);
+		constructor(expressionName: string, declFlags: PullElementFlags, parentDecl: PullDecl, displayName?: string);
 		public getFunctionExpressionName(): string;
 	}
 	class PullSynthesizedDecl extends NormalPullDecl {
-		private _semanticInfoChain;
-		constructor(declName: string, displayName: string, kind: PullElementKind, declFlags: PullElementFlags, parentDecl: PullDecl, span: TextSpan, semanticInfoChain: SemanticInfoChain);
-		public semanticInfoChain(): SemanticInfoChain;
+		constructor(declName: string, displayName: string, kind: PullElementKind, declFlags: PullElementFlags, parentDecl: PullDecl, semanticInfoChain: SemanticInfoChain);
 		public isSynthesized(): boolean;
+		public fileName(): string;
 	}
 	class PullDeclGroup {
 		public name: string;
@@ -7235,7 +5666,6 @@ declare module "typescript-api" {
 		public getDecls(): PullDecl[];
 	}
 	var pullSymbolID: number;
-	var globalTyvarID: number;
 	var sentinelEmptyArray: any[];
 	class PullSymbol {
 		public pullSymbolID: number;
@@ -7269,7 +5699,7 @@ declare module "typescript-api" {
 		constructor(name: string, declKind: PullElementKind);
 		private findAliasedType(scopeSymbol, skipScopeSymbolAliasesLookIn?, lookIntoOnlyExportedAlias?, aliasSymbols?, visitedScopeDeclarations?);
 		public getExternalAliasedSymbols(scopeSymbol: PullSymbol): PullTypeAliasSymbol[];
-		private isExternalModuleReferenceAlias(aliasSymbol);
+		static _isExternalModuleReferenceAlias(aliasSymbol: PullTypeAliasSymbol): boolean;
 		private getExportedInternalAliasSymbol(scopeSymbol);
 		public getAliasSymbolName(scopeSymbol: PullSymbol, aliasNameGetter: (symbol: PullTypeAliasSymbol) => string, aliasPartsNameGetter: (symbol: PullTypeAliasSymbol) => string, skipInternalAlias?: boolean): string;
 		public _getResolver(): PullTypeResolver;
@@ -7283,7 +5713,7 @@ declare module "typescript-api" {
 		public getRootSymbol(): PullSymbol;
 		public setRootSymbol(symbol: PullSymbol): void;
 		public setIsSynthesized(value?: boolean): void;
-		public getIsSynthesized(): boolean;
+		public getIsSynthesized(): any;
 		public setEnclosingSignature(signature: PullSignatureSymbol): void;
 		public getEnclosingSignature(): PullSignatureSymbol;
 		public addDeclaration(decl: PullDecl): void;
@@ -7297,7 +5727,8 @@ declare module "typescript-api" {
 		public anyDeclHasFlag(flag: PullElementFlags): boolean;
 		public allDeclsHaveFlag(flag: PullElementFlags): boolean;
 		public pathToRoot(): PullSymbol[];
-		public findCommonAncestorPath(b: PullSymbol): PullSymbol[];
+		private static unqualifiedNameReferencesDifferentSymbolInScope(symbol, scopePath, endScopePathIndex);
+		private findQualifyingSymbolPathInScopeSymbol(scopeSymbol);
 		public toString(scopeSymbol?: PullSymbol, useConstraintInName?: boolean): string;
 		public getNamePartForFullName(): string;
 		public fullName(scopeSymbol?: PullSymbol): string;
@@ -7324,39 +5755,60 @@ declare module "typescript-api" {
 		private isSpaceChar(line, index);
 		private cleanDocCommentLine(line, jsDocStyleComment, jsDocLineSpaceToRemove?);
 	}
-	class PullSignatureSymbol extends PullSymbol {
+	interface InstantiableSymbol {
+		getIsSpecialized(): boolean;
+		getAllowedToReferenceTypeParameters(): PullTypeParameterSymbol[];
+		getTypeParameterArgumentMap(): TypeArgumentMap;
+	}
+	class PullSignatureSymbol extends PullSymbol implements InstantiableSymbol {
+		private _isDefinition;
 		private _memberTypeParameterNameCache;
 		private _stringConstantOverload;
 		public parameters: PullSymbol[];
-		public typeParameters: PullTypeParameterSymbol[];
+		public _typeParameters: PullTypeParameterSymbol[];
 		public returnType: PullTypeSymbol;
 		public functionType: PullTypeSymbol;
 		public hasOptionalParam: boolean;
 		public nonOptionalParamCount: number;
 		public hasVarArgs: boolean;
-		public hasAGenericParameter: boolean;
+		private _allowedToReferenceTypeParameters;
+		private _instantiationCache;
 		public hasBeenChecked: boolean;
 		public inWrapCheck: boolean;
-		constructor(kind: PullElementKind);
+		public inWrapInfiniteExpandingReferenceCheck: boolean;
+		private _wrapsTypeParameterCache;
+		constructor(kind: PullElementKind, _isDefinition?: boolean);
 		public isDefinition(): boolean;
 		public isGeneric(): boolean;
 		public addParameter(parameter: PullSymbol, isOptional?: boolean): void;
 		public addTypeParameter(typeParameter: PullTypeParameterSymbol): void;
+		public addTypeParametersFromReturnType(): void;
 		public getTypeParameters(): PullTypeParameterSymbol[];
 		public findTypeParameter(name: string): PullTypeParameterSymbol;
+		public getTypeParameterArgumentMap(): TypeArgumentMap;
+		public getAllowedToReferenceTypeParameters(): PullTypeParameterSymbol[];
+		public addSpecialization(specializedVersionOfThisSignature: PullSignatureSymbol, typeArgumentMap: TypeArgumentMap): void;
+		public getSpecialization(typeArgumentMap: TypeArgumentMap): PullSignatureSymbol;
 		public isStringConstantOverloadSignature(): boolean;
+		public getParameterTypeAtIndex(iParam: number): PullTypeSymbol;
 		static getSignatureTypeMemberName(candidateSignature: PullSignatureSymbol, signatures: PullSignatureSymbol[], scopeSymbol: PullSymbol): MemberNameArray;
 		static getSignaturesTypeNameEx(signatures: PullSignatureSymbol[], prefix: string, shortform: boolean, brackets: boolean, scopeSymbol?: PullSymbol, getPrettyTypeName?: boolean, candidateSignature?: PullSignatureSymbol): MemberName[];
 		public toString(scopeSymbol?: PullSymbol, useConstraintInName?: boolean): string;
 		public getSignatureTypeNameEx(prefix: string, shortform: boolean, brackets: boolean, scopeSymbol?: PullSymbol, getParamMarkerInfo?: boolean, getTypeParamMarkerInfo?: boolean): MemberNameArray;
-		public wrapsSomeTypeParameter(typeParameterArgumentMap: PullTypeSymbol[]): boolean;
-		public wrapsSomeNestedTypeIntoInfiniteExpansion(typeBeingWrapped: PullTypeSymbol, isCheckingTypeArgumentList: boolean, knownWrapMap: IBitMatrix): boolean;
+		public forAllParameterTypes(length: number, predicate: (parameterType: PullTypeSymbol, iterationIndex: number) => boolean): boolean;
+		public forAllCorrespondingParameterTypesInThisAndOtherSignature(otherSignature: PullSignatureSymbol, predicate: (thisSignatureParameterType: PullTypeSymbol, otherSignatureParameterType: PullTypeSymbol, iterationIndex: number) => boolean): boolean;
+		public wrapsSomeTypeParameter(typeParameterArgumentMap: TypeArgumentMap): boolean;
+		public getWrappingTypeParameterID(typeParameterArgumentMap: TypeArgumentMap): number;
+		public getWrappingTypeParameterIDWorker(typeParameterArgumentMap: TypeArgumentMap): number;
+		public _wrapsSomeTypeParameterIntoInfinitelyExpandingTypeReference(enclosingType: PullTypeSymbol, knownWrapMap: IBitMatrix): boolean;
+		public _wrapsSomeTypeParameterIntoInfinitelyExpandingTypeReferenceWorker(enclosingType: PullTypeSymbol, knownWrapMap: IBitMatrix): boolean;
 	}
-	class PullTypeSymbol extends PullSymbol {
+	class PullTypeSymbol extends PullSymbol implements InstantiableSymbol {
 		private _members;
 		private _enclosedMemberTypes;
 		private _enclosedMemberContainers;
 		private _typeParameters;
+		private _allowedToReferenceTypeParameters;
 		private _specializedVersionsOfThisType;
 		private _arrayVersionOfThisType;
 		private _implementedTypes;
@@ -7366,8 +5818,10 @@ declare module "typescript-api" {
 		private _callSignatures;
 		private _allCallSignatures;
 		private _constructSignatures;
+		private _allConstructSignatures;
 		private _indexSignatures;
 		private _allIndexSignatures;
+		private _allIndexSignaturesOfAugmentedType;
 		private _memberNameCache;
 		private _enclosedTypeNameCache;
 		private _enclosedContainerCache;
@@ -7388,7 +5842,10 @@ declare module "typescript-api" {
 		private _inMemberTypeNameEx;
 		public inSymbolPrivacyCheck: boolean;
 		public inWrapCheck: boolean;
+		public inWrapInfiniteExpandingReferenceCheck: boolean;
 		public typeReference: PullTypeReferenceSymbol;
+		private _widenedType;
+		private _wrapsTypeParameterCache;
 		constructor(name: string, kind: PullElementKind);
 		private _isArrayNamedTypeReference;
 		public isArrayNamedTypeReference(): boolean;
@@ -7401,8 +5858,9 @@ declare module "typescript-api" {
 		public isTypeVariable(): boolean;
 		public isError(): boolean;
 		public isEnum(): boolean;
-		public getTypeParameterArgumentMap(): PullTypeSymbol[];
+		public getTypeParameterArgumentMap(): TypeArgumentMap;
 		public isObject(): boolean;
+		public isFunctionType(): boolean;
 		public getKnownBaseTypeCount(): number;
 		public resetKnownBaseTypeCount(): void;
 		public incrementKnownBaseCount(): void;
@@ -7430,31 +5888,41 @@ declare module "typescript-api" {
 		public addEnclosedNonMemberType(enclosedNonMemberType: PullTypeSymbol): void;
 		public addEnclosedNonMemberContainer(enclosedNonMemberContainer: PullTypeSymbol): void;
 		public addTypeParameter(typeParameter: PullTypeParameterSymbol): void;
-		public addConstructorTypeParameter(typeParameter: PullTypeParameterSymbol): void;
 		public getMembers(): PullSymbol[];
 		public setHasDefaultConstructor(hasOne?: boolean): void;
 		public getHasDefaultConstructor(): boolean;
 		public getConstructorMethod(): PullSymbol;
 		public setConstructorMethod(constructorMethod: PullSymbol): void;
 		public getTypeParameters(): PullTypeParameterSymbol[];
+		public getAllowedToReferenceTypeParameters(): PullTypeParameterSymbol[];
 		public isGeneric(): boolean;
-		private canUseSimpleInstantiationCache(substitutingTypes);
-		public addSpecialization(specializedVersionOfThisType: PullTypeSymbol, substitutingTypes: PullTypeSymbol[]): void;
-		public getSpecialization(substitutingTypes: PullTypeSymbol[]): PullTypeSymbol;
+		private canUseSimpleInstantiationCache(typeArgumentMap);
+		private getSimpleInstantiationCacheId(typeArgumentMap);
+		public addSpecialization(specializedVersionOfThisType: PullTypeSymbol, typeArgumentMap: TypeArgumentMap): void;
+		public getSpecialization(typeArgumentMap: TypeArgumentMap): PullTypeSymbol;
 		public getKnownSpecializations(): PullTypeSymbol[];
 		public getTypeArguments(): PullTypeSymbol[];
 		public getTypeArgumentsOrTypeParameters(): PullTypeSymbol[];
-		public addCallSignature(callSignature: PullSignatureSymbol): void;
-		public addConstructSignature(constructSignature: PullSignatureSymbol): void;
+		private addCallOrConstructSignaturePrerequisiteBase(signature);
+		private addCallSignaturePrerequisite(callSignature);
+		public appendCallSignature(callSignature: PullSignatureSymbol): void;
+		public insertCallSignatureAtIndex(callSignature: PullSignatureSymbol, index: number): void;
+		private addConstructSignaturePrerequisite(constructSignature);
+		public appendConstructSignature(constructSignature: PullSignatureSymbol): void;
+		public insertConstructSignatureAtIndex(constructSignature: PullSignatureSymbol, index: number): void;
 		public addIndexSignature(indexSignature: PullSignatureSymbol): void;
-		private addUnhiddenSignaturesFromBaseType(derivedTypeSignatures, baseTypeSignatures, signaturesBeingAggregated);
 		public hasOwnCallSignatures(): boolean;
+		public getOwnCallSignatures(): PullSignatureSymbol[];
 		public getCallSignatures(): PullSignatureSymbol[];
 		public hasOwnConstructSignatures(): boolean;
+		public getOwnDeclaredConstructSignatures(): PullSignatureSymbol[];
 		public getConstructSignatures(): PullSignatureSymbol[];
 		public hasOwnIndexSignatures(): boolean;
 		public getOwnIndexSignatures(): PullSignatureSymbol[];
 		public getIndexSignatures(): PullSignatureSymbol[];
+		public getIndexSignaturesOfAugmentedType(resolver: PullTypeResolver, globalFunctionInterface: PullTypeSymbol, globalObjectInterface: PullTypeSymbol): PullSignatureSymbol[];
+		private getBaseClassConstructSignatures(baseType);
+		private getDefaultClassConstructSignature();
 		public addImplementedType(implementedType: PullTypeSymbol): void;
 		public getImplementedTypes(): PullTypeSymbol[];
 		public addExtendedType(extendedType: PullTypeSymbol): void;
@@ -7475,34 +5943,40 @@ declare module "typescript-api" {
 		public getScopedName(scopeSymbol?: PullSymbol, skipTypeParametersInName?: boolean, useConstraintInName?: boolean, skipInternalAliasName?: boolean): string;
 		public isNamedTypeSymbol(): boolean;
 		public toString(scopeSymbol?: PullSymbol, useConstraintInName?: boolean): string;
-		public getScopedNameEx(scopeSymbol?: PullSymbol, skipTypeParametersInName?: boolean, useConstraintInName?: boolean, getPrettyTypeName?: boolean, getTypeParamMarkerInfo?: boolean, skipInternalAliasName?: boolean): MemberName;
+		public getScopedNameEx(scopeSymbol?: PullSymbol, skipTypeParametersInName?: boolean, useConstraintInName?: boolean, getPrettyTypeName?: boolean, getTypeParamMarkerInfo?: boolean, skipInternalAliasName?: boolean, shouldAllowArrayType?: boolean): MemberName;
 		public hasOnlyOverloadCallSignatures(): boolean;
 		public getTypeOfSymbol(): PullSymbol;
 		private getMemberTypeNameEx(topLevel, scopeSymbol?, getPrettyTypeName?);
 		public getGenerativeTypeClassification(enclosingType: PullTypeSymbol): GenerativeTypeClassification;
 		public wrapsSomeTypeParameter(typeParameterArgumentMap: CandidateInferenceInfo[]): boolean;
-		public wrapsSomeTypeParameter(typeParameterArgumentMap: PullTypeSymbol[]): boolean;
-		public wrapsSomeNestedTypeIntoInfiniteExpansion(typeBeingWrapped: PullTypeSymbol): boolean;
-		private isTypeEquivalentToRootSymbol();
-		private isTypeBeingWrapped(typeBeingWrapped);
-		private anyRootTypeBeingWrapped(typeBeingWrapped);
-		public _wrapsSomeNestedTypeIntoInfiniteExpansionRecurse(typeBeingWrapped: PullTypeSymbol, isCheckingTypeArgumentList: boolean, knownWrapMap: IBitMatrix): boolean;
-		private _wrapsSomeNestedTypeIntoInfiniteExpansionWorker(typeBeingWrapped, isCheckingTypeArgumentList, knownWrapMap);
+		public wrapsSomeTypeParameter(typeParameterArgumentMap: TypeArgumentMap, skipTypeArgumentCheck?: boolean): boolean;
+		public getWrappingTypeParameterID(typeParameterArgumentMap: TypeArgumentMap, skipTypeArgumentCheck?: boolean): number;
+		private getWrappingTypeParameterIDFromSignatures(signatures, typeParameterArgumentMap);
+		private getWrappingTypeParameterIDWorker(typeParameterArgumentMap, skipTypeArgumentCheck);
+		public wrapsSomeTypeParameterIntoInfinitelyExpandingTypeReference(enclosingType: PullTypeSymbol): boolean;
+		public _wrapsSomeTypeParameterIntoInfinitelyExpandingTypeReferenceRecurse(enclosingType: PullTypeSymbol, knownWrapMap: IBitMatrix): boolean;
+		private _wrapsSomeTypeParameterIntoInfinitelyExpandingTypeReferenceWorker(enclosingType, knownWrapMap);
+		private _wrapsSomeTypeParameterIntoInfinitelyExpandingTypeReferenceStructure(enclosingType, knownWrapMap);
+		public widenedType(resolver: PullTypeResolver, ast: AST, context: PullTypeResolutionContext): PullTypeSymbol;
 	}
 	class PullPrimitiveTypeSymbol extends PullTypeSymbol {
 		constructor(name: string);
 		public isAny(): boolean;
+		public isNull(): boolean;
+		public isUndefined(): boolean;
 		public isStringConstant(): boolean;
 		public setUnresolved(): void;
+		public getDisplayName(): string;
 	}
 	class PullStringConstantTypeSymbol extends PullPrimitiveTypeSymbol {
 		constructor(name: string);
 		public isStringConstant(): boolean;
 	}
 	class PullErrorTypeSymbol extends PullPrimitiveTypeSymbol {
-		private anyType;
-		constructor(anyType: PullTypeSymbol, name: string);
+		public _anyType: PullTypeSymbol;
+		constructor(_anyType: PullTypeSymbol, name: string);
 		public isError(): boolean;
+		public _getResolver(): PullTypeResolver;
 		public getName(scopeSymbol?: PullSymbol, useConstraintInName?: boolean): string;
 		public getDisplayName(scopeSymbol?: PullSymbol, useConstraintInName?: boolean, skipInternalAliasName?: boolean): string;
 		public toString(scopeSymbol?: PullSymbol, useConstraintInName?: boolean): string;
@@ -7532,12 +6006,17 @@ declare module "typescript-api" {
 		private _assignedContainer;
 		private _isUsedAsValue;
 		private _typeUsedExternally;
+		private _isUsedInExportAlias;
 		private retrievingExportAssignment;
+		private linkedAliasSymbols;
 		constructor(name: string);
+		public isUsedInExportedAlias(): boolean;
 		public typeUsedExternally(): boolean;
 		public isUsedAsValue(): boolean;
-		public setTypeUsedExternally(value: boolean): void;
-		public setIsUsedAsValue(value: boolean): void;
+		public setTypeUsedExternally(): void;
+		public setIsUsedInExportedAlias(): void;
+		public addLinkedAliasSymbol(contingentValueSymbol: PullTypeAliasSymbol): void;
+		public setIsUsedAsValue(): void;
 		public assignedValue(): PullSymbol;
 		public assignedType(): PullTypeSymbol;
 		public assignedContainer(): PullContainerSymbol;
@@ -7558,17 +6037,15 @@ declare module "typescript-api" {
 		public findNestedContainer(name: string): PullTypeSymbol;
 		public getAllMembers(searchDeclKind: PullElementKind, memberVisibility: GetAllMembersVisiblity): PullSymbol[];
 	}
-	class PullDefinitionSignatureSymbol extends PullSignatureSymbol {
-		public isDefinition(): boolean;
-	}
 	class PullTypeParameterSymbol extends PullTypeSymbol {
-		private _isFunctionTypeParameter;
 		private _constraint;
-		constructor(name: string, _isFunctionTypeParameter: boolean);
+		constructor(name: string);
 		public isTypeParameter(): boolean;
-		public isFunctionTypeParameter(): boolean;
 		public setConstraint(constraintType: PullTypeSymbol): void;
 		public getConstraint(): PullTypeSymbol;
+		public getBaseConstraint(semanticInfoChain: SemanticInfoChain): PullTypeSymbol;
+		private getConstraintRecursively(visitedTypeParameters);
+		public getDefaultConstraint(semanticInfoChain: SemanticInfoChain): PullTypeSymbol;
 		public getCallSignatures(): PullSignatureSymbol[];
 		public getConstructSignatures(): PullSignatureSymbol[];
 		public getIndexSignatures(): PullSignatureSymbol[];
@@ -7588,50 +6065,90 @@ declare module "typescript-api" {
 		public setGetter(getter: PullSymbol): void;
 		public getGetter(): PullSymbol;
 	}
-	function getIDForTypeSubstitutions(types: PullTypeSymbol[]): string;
+	function getIDForTypeSubstitutions(instantiatingType: PullTypeSymbol, typeArgumentMap: TypeArgumentMap): string;
+	function getIDForTypeSubstitutions(instantiatingSignature: PullSignatureSymbol, typeArgumentMap: TypeArgumentMap): string;
 	enum GetAllMembersVisiblity {
 		all = 0,
 		internallyVisible = 1,
 		externallyVisible = 2,
 	}
+	class PullTypeEnclosingTypeWalker {
+		private currentSymbols;
+		public getEnclosingType(): PullTypeSymbol;
+		public _canWalkStructure(): boolean;
+		public _getCurrentSymbol(): PullSymbol;
+		public getGenerativeClassification(): GenerativeTypeClassification;
+		private _pushSymbol(symbol);
+		private _popSymbol();
+		private _setEnclosingTypeOfParentDecl(decl, setSignature);
+		private _setEnclosingTypeWorker(symbol, setSignature);
+		public setCurrentSymbol(symbol: PullSymbol): void;
+		public startWalkingType(symbol: PullTypeSymbol): PullSymbol[];
+		public endWalkingType(currentSymbolsWhenStartedWalkingTypes: PullSymbol[]): void;
+		public setEnclosingType(symbol: PullSymbol): void;
+		public walkMemberType(memberName: string, resolver: PullTypeResolver): void;
+		public postWalkMemberType(): void;
+		public walkSignature(kind: PullElementKind, index: number): void;
+		public postWalkSignature(): void;
+		public walkTypeArgument(index: number): void;
+		public postWalkTypeArgument(): void;
+		public walkTypeParameterConstraint(index: number): void;
+		public postWalkTypeParameterConstraint(): void;
+		public walkReturnType(): void;
+		public postWalkReturnType(): void;
+		public walkParameterType(iParam: number): void;
+		public postWalkParameterType(): void;
+		public getBothKindOfIndexSignatures(resolver: PullTypeResolver, context: PullTypeResolutionContext, includeAugmentedType: boolean): IndexSignatureInfo;
+		public walkIndexSignatureReturnType(indexSigInfo: IndexSignatureInfo, useStringIndexSignature: boolean, onlySignature?: boolean): void;
+		public postWalkIndexSignatureReturnType(onlySignature?: boolean): void;
+	}
 	class CandidateInferenceInfo {
 		public typeParameter: PullTypeParameterSymbol;
-		public isFixed: boolean;
+		public _inferredTypeAfterFixing: PullTypeSymbol;
 		public inferenceCandidates: PullTypeSymbol[];
 		public addCandidate(candidate: PullTypeSymbol): void;
+		public isFixed(): boolean;
+		public fixTypeParameter(resolver: PullTypeResolver, context: PullTypeResolutionContext): void;
 	}
-	class ArgumentInferenceContext {
+	class TypeArgumentInferenceContext {
+		public resolver: PullTypeResolver;
+		public context: PullTypeResolutionContext;
+		public signatureBeingInferred: PullSignatureSymbol;
 		public inferenceCache: IBitMatrix;
 		public candidateCache: CandidateInferenceInfo[];
-		public fixedParameterTypes: PullTypeSymbol[];
-		public resolver: PullTypeResolver;
-		public argumentASTs: ISeparatedSyntaxList2;
-		constructor(resolver: PullTypeResolver, argumentASTs: ISeparatedSyntaxList2);
-		constructor(resolver: PullTypeResolver, fixedParameterTypes: PullTypeSymbol[]);
+		constructor(resolver: PullTypeResolver, context: PullTypeResolutionContext, signatureBeingInferred: PullSignatureSymbol);
 		public alreadyRelatingTypes(objectType: PullTypeSymbol, parameterType: PullTypeSymbol): boolean;
 		public resetRelationshipCache(): void;
 		public addInferenceRoot(param: PullTypeParameterSymbol): void;
 		public getInferenceInfo(param: PullTypeParameterSymbol): CandidateInferenceInfo;
-		public addCandidateForInference(param: PullTypeParameterSymbol, candidate: PullTypeSymbol, fix: boolean): void;
-		public getInferenceArgumentCount(): number;
-		public getArgumentTypeSymbolAtIndex(i: number, context: PullTypeResolutionContext): PullTypeSymbol;
-		public getInferenceCandidates(): PullTypeSymbol[][];
-		public inferArgumentTypes(resolver: PullTypeResolver, context: PullTypeResolutionContext): {
-			results: {
-				param: PullTypeParameterSymbol;
-				type: PullTypeSymbol;
-			}[];
-			unfit: boolean;
-		};
+		public addCandidateForInference(param: PullTypeParameterSymbol, candidate: PullTypeSymbol): void;
+		public inferTypeArguments(): PullTypeSymbol[];
+		public fixTypeParameter(typeParameter: PullTypeParameterSymbol): void;
+		public _finalizeInferredTypeArguments(): PullTypeSymbol[];
+		public isInvocationInferenceContext(): boolean;
+	}
+	class InvocationTypeArgumentInferenceContext extends TypeArgumentInferenceContext {
+		public argumentASTs: ISeparatedSyntaxList2;
+		constructor(resolver: PullTypeResolver, context: PullTypeResolutionContext, signatureBeingInferred: PullSignatureSymbol, argumentASTs: ISeparatedSyntaxList2);
+		public isInvocationInferenceContext(): boolean;
+		public inferTypeArguments(): PullTypeSymbol[];
+	}
+	class ContextualSignatureInstantiationTypeArgumentInferenceContext extends TypeArgumentInferenceContext {
+		private contextualSignature;
+		private shouldFixContextualSignatureParameterTypes;
+		constructor(resolver: PullTypeResolver, context: PullTypeResolutionContext, signatureBeingInferred: PullSignatureSymbol, contextualSignature: PullSignatureSymbol, shouldFixContextualSignatureParameterTypes: boolean);
+		public isInvocationInferenceContext(): boolean;
+		public inferTypeArguments(): PullTypeSymbol[];
 	}
 	class PullContextualTypeContext {
 		public contextualType: PullTypeSymbol;
 		public provisional: boolean;
-		public substitutions: PullTypeSymbol[];
+		public isInferentiallyTyping: boolean;
+		public typeArgumentInferenceContext: TypeArgumentInferenceContext;
 		public provisionallyTypedSymbols: PullSymbol[];
 		public hasProvisionalErrors: boolean;
 		private astSymbolMap;
-		constructor(contextualType: PullTypeSymbol, provisional: boolean, substitutions: PullTypeSymbol[]);
+		constructor(contextualType: PullTypeSymbol, provisional: boolean, isInferentiallyTyping: boolean, typeArgumentInferenceContext: TypeArgumentInferenceContext);
 		public recordProvisionallyTypedSymbol(symbol: PullSymbol): void;
 		public invalidateProvisionallyTypedSymbols(): void;
 		public setSymbolForAST(ast: AST, symbol: PullSymbol): void;
@@ -7643,14 +6160,22 @@ declare module "typescript-api" {
 		public fileName: string;
 		private contextStack;
 		private typeCheckedNodes;
+		public enclosingTypeWalker1: PullTypeEnclosingTypeWalker;
+		public enclosingTypeWalker2: PullTypeEnclosingTypeWalker;
 		constructor(resolver: PullTypeResolver, inTypeCheck?: boolean, fileName?: string);
 		public setTypeChecked(ast: AST): void;
 		public canTypeCheckAST(ast: AST): boolean;
-		public pushContextualType(type: PullTypeSymbol, provisional: boolean, substitutions: PullTypeSymbol[]): void;
-		public popContextualType(): PullContextualTypeContext;
+		private _pushAnyContextualType(type, provisional, isInferentiallyTyping, argContext);
+		public pushNewContextualType(type: PullTypeSymbol): void;
+		public propagateContextualType(type: PullTypeSymbol): void;
+		public pushInferentialType(type: PullTypeSymbol, typeArgumentInferenceContext: TypeArgumentInferenceContext): void;
+		public pushProvisionalType(type: PullTypeSymbol): void;
+		public popAnyContextualType(): PullContextualTypeContext;
 		public hasProvisionalErrors(): boolean;
-		public findSubstitution(type: PullTypeSymbol): PullTypeSymbol;
 		public getContextualType(): PullTypeSymbol;
+		public fixAllTypeParametersReferencedByType(type: PullTypeSymbol, resolver: PullTypeResolver, argContext?: TypeArgumentInferenceContext): PullTypeSymbol;
+		private getCurrentTypeArgumentInferenceContext();
+		public isInferentiallyTyping(): boolean;
 		public inProvisionalResolution(): boolean;
 		private inBaseTypeResolution;
 		public isInBaseTypeResolution(): boolean;
@@ -7661,6 +6186,46 @@ declare module "typescript-api" {
 		public typeCheck(): boolean;
 		public setSymbolForAST(ast: AST, symbol: PullSymbol): void;
 		public getSymbolForAST(ast: AST): PullSymbol;
+		public startWalkingTypes(symbol1: PullTypeSymbol, symbol2: PullTypeSymbol): {
+			symbolsWhenStartedWalkingTypes1: PullSymbol[];
+			symbolsWhenStartedWalkingTypes2: PullSymbol[];
+		};
+		public endWalkingTypes(symbolsWhenStartedWalkingTypes: {
+			symbolsWhenStartedWalkingTypes1: PullSymbol[];
+			symbolsWhenStartedWalkingTypes2: PullSymbol[];
+		}): void;
+		public setEnclosingTypes(symbol1: PullSymbol, symbol2: PullSymbol): void;
+		public walkMemberTypes(memberName: string): void;
+		public postWalkMemberTypes(): void;
+		public walkSignatures(kind: PullElementKind, index: number, index2?: number): void;
+		public postWalkSignatures(): void;
+		public walkTypeParameterConstraints(index: number): void;
+		public postWalkTypeParameterConstraints(): void;
+		public walkTypeArgument(index: number): void;
+		public postWalkTypeArgument(): void;
+		public walkReturnTypes(): void;
+		public postWalkReturnTypes(): void;
+		public walkParameterTypes(iParam: number): void;
+		public postWalkParameterTypes(): void;
+		public getBothKindOfIndexSignatures(includeAugmentedType1: boolean, includeAugmentedType2: boolean): {
+			indexSigs1: IndexSignatureInfo;
+			indexSigs2: IndexSignatureInfo;
+		};
+		public walkIndexSignatureReturnTypes(indexSigs: {
+			indexSigs1: IndexSignatureInfo;
+			indexSigs2: IndexSignatureInfo;
+		}, useStringIndexSignature1: boolean, useStringIndexSignature2: boolean, onlySignature?: boolean): void;
+		public postWalkIndexSignatureReturnTypes(onlySignature?: boolean): void;
+		public swapEnclosingTypeWalkers(): void;
+		public oneOfClassificationsIsInfinitelyExpanding(): boolean;
+		public resetEnclosingTypeWalkers(): {
+			enclosingTypeWalker1: PullTypeEnclosingTypeWalker;
+			enclosingTypeWalker2: PullTypeEnclosingTypeWalker;
+		};
+		public setEnclosingTypeWalkers(enclosingTypeWalkers: {
+			enclosingTypeWalker1: PullTypeEnclosingTypeWalker;
+			enclosingTypeWalker2: PullTypeEnclosingTypeWalker;
+		}): void;
 	}
 	interface IPullTypeCollection {
 		getLength(): number;
@@ -7675,6 +6240,10 @@ declare module "typescript-api" {
 	}
 	class PullAdditionalObjectLiteralResolutionData {
 		public membersContextTypeSymbols: PullTypeSymbol[];
+	}
+	interface IndexSignatureInfo {
+		numericSignature: PullSignatureSymbol;
+		stringSignature: PullSignatureSymbol;
 	}
 	class PullTypeResolver {
 		private compilationSettings;
@@ -7694,6 +6263,7 @@ declare module "typescript-api" {
 		private assignableCache;
 		private subtypeCache;
 		private identicalCache;
+		private inResolvingOtherDeclsWalker;
 		constructor(compilationSettings: ImmutableCompilationSettings, semanticInfoChain: SemanticInfoChain);
 		private cachedArrayInterfaceType();
 		public getArrayNamedType(): PullTypeSymbol;
@@ -7705,6 +6275,7 @@ declare module "typescript-api" {
 		private cachedIArgumentsInterfaceType();
 		private cachedRegExpInterfaceType();
 		private cachedFunctionArgumentsSymbol();
+		private getApparentType(type);
 		private setTypeChecked(ast, context);
 		private canTypeCheckAST(ast, context);
 		private setSymbolForAST(ast, symbol, context);
@@ -7713,7 +6284,8 @@ declare module "typescript-api" {
 		public getNewErrorTypeSymbol(name?: string): PullErrorTypeSymbol;
 		public getEnclosingDecl(decl: PullDecl): PullDecl;
 		private getExportedMemberSymbol(symbol, parent);
-		private getMemberSymbol(symbolName, declSearchKind, parent);
+		public _getNamedPropertySymbolOfAugmentedType(symbolName: string, parent: PullTypeSymbol): PullSymbol;
+		private getNamedPropertySymbol(symbolName, declSearchKind, parent);
 		private getSymbolFromDeclPath(symbolName, declPath, declSearchKind);
 		private getVisibleDeclsFromDeclPath(declPath, declSearchKind);
 		private addFilteredDecls(decls, declSearchKind, result);
@@ -7722,14 +6294,17 @@ declare module "typescript-api" {
 		public getVisibleMembersFromExpression(expression: AST, enclosingDecl: PullDecl, context: PullTypeResolutionContext): PullSymbol[];
 		private isAnyOrEquivalent(type);
 		private resolveExternalModuleReference(idText, currentFileName);
-		public resolveDeclaredSymbol(symbol: PullSymbol, context?: PullTypeResolutionContext): PullSymbol;
-		private resolveDeclaredSymbolWorker(symbol, context);
+		public resolveDeclaredSymbol<TSymbol extends PullSymbol>(symbol: TSymbol, context?: PullTypeResolutionContext): TSymbol;
+		private resolveDeclaredSymbolWorker<TSymbol extends PullSymbol>(symbol, context);
+		private resolveOtherDecl(otherDecl, context);
 		private resolveOtherDeclarations(astName, context);
 		private resolveSourceUnit(sourceUnit, context);
 		private typeCheckSourceUnit(sourceUnit, context);
+		private verifyUniquenessOfImportNamesInSourceUnit(sourceUnit);
 		private resolveEnumDeclaration(ast, context);
 		private typeCheckEnumDeclaration(ast, context);
 		private postTypeCheckEnumDeclaration(ast, context);
+		private checkInitializersInEnumDeclarations(decl, context);
 		private resolveModuleDeclaration(ast, context);
 		private ensureAllSymbolsAreBound(containerSymbol);
 		private resolveModuleSymbol(containerSymbol, context, moduleDeclAST, moduleDeclNameAST, sourceUnitAST);
@@ -7737,6 +6312,9 @@ declare module "typescript-api" {
 		private resolveSingleModuleDeclaration(ast, astName, context);
 		private typeCheckModuleDeclaration(ast, context);
 		private typeCheckSingleModuleDeclaration(ast, astName, context);
+		private verifyUniquenessOfImportNamesInModule(decl);
+		private checkUniquenessOfImportNames(decls, doesNameExistOutside?);
+		private scanVariableDeclarationGroups(enclosingDecl, firstDeclHandler, subsequentDeclHandler?);
 		private postTypeCheckModuleDeclaration(ast, context);
 		private isTypeRefWithoutTypeArgs(term);
 		public createInstantiatedType(type: PullTypeSymbol, typeArguments: PullTypeSymbol[]): PullTypeSymbol;
@@ -7748,6 +6326,8 @@ declare module "typescript-api" {
 		private resolveTypeSymbolSignatures(typeSymbol, context);
 		private resolveInterfaceDeclaration(interfaceDeclAST, context);
 		private typeCheckInterfaceDeclaration(interfaceDeclAST, context);
+		private checkInterfaceDeclForIdenticalTypeParameters(interfaceDeclAST, context);
+		private checkTypeForDuplicateIndexSignatures(enclosingTypeSymbol);
 		private filterSymbol(symbol, kind, enclosingDecl, context);
 		private getMemberSymbolOfKind(symbolName, kind, pullTypeSymbol, enclosingDecl, context);
 		private resolveIdentifierOfInternalModuleReference(importDecl, identifier, moduleSymbol, enclosingDecl, context);
@@ -7760,15 +6340,16 @@ declare module "typescript-api" {
 		private resolveAnyFunctionTypeSignature(funcDeclAST, typeParameters, parameterList, returnTypeAnnotation, context);
 		private resolveFunctionTypeSignatureParameter(argDeclAST, signature, enclosingDecl, context);
 		private resolveFunctionExpressionParameter(argDeclAST, id, typeExpr, equalsValueClause, contextParam, enclosingDecl, context);
-		private checkNameForCompilerGeneratedDeclarationCollision(astWithName, isDeclaration, name, context, immediateThisCheck?);
+		private checkNameForCompilerGeneratedDeclarationCollision(astWithName, isDeclaration, name, context);
 		private hasRestParameterCodeGen(someFunctionDecl);
 		private checkArgumentsCollides(ast, context);
-		private checkIndexOfRestArgumentInitializationCollides(ast, context);
+		private checkIndexOfRestArgumentInitializationCollides(ast, isDeclaration, context);
 		private checkExternalModuleRequireExportsCollides(ast, name, context);
 		private resolveObjectTypeTypeReference(objectType, context);
 		private typeCheckObjectTypeTypeReference(objectType, context);
 		private resolveTypeAnnotation(typeAnnotation, context);
 		public resolveTypeReference(typeRef: AST, context: PullTypeResolutionContext): PullTypeSymbol;
+		private getArrayType(elementType);
 		private computeTypeReferenceSymbol(term, context);
 		private genericTypeIsUsedWithoutRequiredTypeArguments(typeSymbol, term, context);
 		private resolveMemberVariableDeclaration(varDecl, context);
@@ -7793,15 +6374,20 @@ declare module "typescript-api" {
 		private checkThisCaptureVariableCollides(_thisAST, isDeclaration, context);
 		private postTypeCheckVariableDeclaratorOrParameter(varDeclOrParameter, context);
 		private resolveTypeParameterDeclaration(typeParameterAST, context);
+		private resolveFirstTypeParameterDeclaration(typeParameterSymbol, context);
 		private typeCheckTypeParameterDeclaration(typeParameterAST, context);
 		private resolveConstraint(constraint, context);
 		private resolveFunctionBodyReturnTypes(funcDeclAST, block, bodyExpression, signature, useContextualType, enclosingDecl, context);
 		private typeCheckConstructorDeclaration(funcDeclAST, context);
 		private constructorHasSuperCall(constructorDecl);
-		private typeCheckFunctionExpression(funcDecl, context);
+		private typeCheckFunctionExpression(funcDecl, isContextuallyTyped, context);
 		private typeCheckCallSignature(funcDecl, context);
 		private typeCheckConstructSignature(funcDecl, context);
-		private typeCheckFunctionDeclaration(funcDeclAST, isStatic, name, typeParameters, parameters, returnTypeAnnotation, block, context);
+		private typeCheckMethodSignature(funcDecl, context);
+		private typeCheckMemberFunctionDeclaration(funcDecl, context);
+		private containsSingleThrowStatement(block);
+		private typeCheckAnyFunctionDeclaration(funcDeclAST, isStatic, name, typeParameters, parameters, returnTypeAnnotation, block, context);
+		private checkThatNonVoidFunctionHasReturnExpressionOrThrowStatement(functionDecl, returnTypeAnnotation, returnTypeSymbol, block, context);
 		private typeCheckIndexSignature(funcDeclAST, context);
 		private postTypeCheckFunctionDeclaration(funcDeclAST, context);
 		private resolveReturnTypeAnnotationOfFunctionDeclaration(funcDeclAST, returnTypeAnnotation, context);
@@ -7884,12 +6470,14 @@ declare module "typescript-api" {
 		private isIterationStatement(ast);
 		private isAnyFunctionExpressionOrDeclaration(ast);
 		private inSwitchStatement(ast);
-		private inIterationStatement(ast);
+		private inIterationStatement(ast, crossFunctions);
 		private getEnclosingLabels(ast, breakable, crossFunctions);
 		private typeCheckContinueStatement(ast, context);
 		private resolveBreakStatement(ast, context);
 		private typeCheckBreakStatement(ast, context);
 		public resolveAST(ast: AST, isContextuallyTyped: boolean, context: PullTypeResolutionContext): PullSymbol;
+		private resolveExpressionAST(ast, isContextuallyOrInferentiallyTyped, context);
+		private resolveExpressionWorker(ast, isContextuallyTyped, context);
 		private typeCheckAST(ast, isContextuallyTyped, context);
 		private processPostTypeCheckWorkItems(context);
 		private postTypeCheck(ast, context);
@@ -7897,29 +6485,38 @@ declare module "typescript-api" {
 		private postTypeCheckNameExpression(nameAST, context);
 		private typeCheckNameExpression(nameAST, context);
 		private resolveNameExpression(nameAST, context);
-		private isSomeFunctionScope(declPath);
-		private computeNameExpression(nameAST, context, reportDiagnostics);
+		private isInEnumDecl(decl);
+		private getSomeInnermostFunctionScopeDecl(declPath);
+		private isFromFunctionScope(nameSymbol, functionScopeDecl);
+		private findConstructorDeclOfEnclosingType(decl);
+		private checkNameAsPartOfInitializerExpressionForInstanceMemberVariable(nameAST, nameSymbol, context);
+		private computeNameExpression(nameAST, context);
 		private getCurrentParameterIndexForFunction(parameter, funcDecl);
 		private resolveMemberAccessExpression(dottedNameAST, context);
 		private resolveDottedNameExpression(dottedNameAST, expression, name, context);
 		private computeDottedNameExpression(expression, name, context, checkSuperPrivateAndStaticAccess);
+		private computeDottedNameExpressionFromLHS(lhs, expression, name, context, checkSuperPrivateAndStaticAccess);
 		private resolveTypeNameExpression(nameAST, context);
 		private computeTypeNameExpression(nameAST, context);
+		private isInStaticMemberContext(decl);
 		private isLeftSideOfQualifiedName(ast);
 		private resolveGenericTypeReference(genericTypeAST, context);
 		private resolveQualifiedName(dottedNameAST, context);
+		private isLastNameOfModuleNameModuleReference(ast);
 		private computeQualifiedName(dottedNameAST, context);
 		private shouldContextuallyTypeAnyFunctionExpression(functionExpressionAST, typeParameters, parameters, returnTypeAnnotation, context);
 		private resolveAnyFunctionExpression(funcDeclAST, typeParameters, parameters, returnTypeAnnotation, block, bodyExpression, isContextuallyTyped, context);
-		private typeCheckSimpleArrowFunctionExpression(arrowFunction, context);
-		private typeCheckParenthesizedArrowFunctionExpression(arrowFunction, context);
-		private typeCheckAnyFunctionExpression(funcDeclAST, typeParameters, returnTypeAnnotation, block, bodyExpression, context);
+		private resolveAnyFunctionExpressionParameters(funcDeclAST, typeParameters, parameters, returnTypeAnnotation, isContextuallyTyped, context);
+		private typeCheckSimpleArrowFunctionExpression(arrowFunction, isContextuallyTyped, context);
+		private typeCheckParenthesizedArrowFunctionExpression(arrowFunction, isContextuallyTyped, context);
+		private typeCheckAnyFunctionExpression(funcDeclAST, typeParameters, parameters, returnTypeAnnotation, block, bodyExpression, isContextuallyTyped, context);
 		private resolveThisExpression(thisExpression, context);
 		private inTypeArgumentList(ast);
 		private inClassExtendsHeritageClause(ast);
 		private inTypeQuery(ast);
 		private inArgumentListOfSuperInvocation(ast);
 		private inConstructorParameterList(ast);
+		private isFunctionAccessorOrNonArrowFunctionExpression(decl);
 		private isFunctionOrNonArrowFunctionExpression(decl);
 		private typeCheckThisExpression(thisExpression, context, enclosingDecl);
 		private getContextualClassSymbolForEnclosingDecl(ast, enclosingDecl);
@@ -7940,7 +6537,10 @@ declare module "typescript-api" {
 		private resolveElementAccessExpression(callEx, context);
 		private typeCheckElementAccessExpression(callEx, context, symbolAndDiagnostic);
 		private computeElementAccessExpressionSymbolAndDiagnostic(callEx, context);
-		private getBothKindsOfIndexSignatures(enclosingType, context);
+		private getBothKindsOfIndexSignaturesIncludingAugmentedType(enclosingType, context);
+		private getBothKindsOfIndexSignaturesExcludingAugmentedType(enclosingType, context);
+		public _getBothKindsOfIndexSignatures(enclosingType: PullTypeSymbol, context: PullTypeResolutionContext, includeAugmentedType: boolean): IndexSignatureInfo;
+		public _addUnhiddenSignaturesFromBaseType(derivedTypeSignatures: PullSignatureSymbol[], baseTypeSignatures: PullSignatureSymbol[], signaturesBeingAggregated: PullSignatureSymbol[]): void;
 		private resolveBinaryAdditionOperation(binaryExpression, context);
 		private bestCommonTypeOfTwoTypes(type1, type2, context);
 		private bestCommonTypeOfThreeTypes(type1, type2, type3, context);
@@ -7958,43 +6558,60 @@ declare module "typescript-api" {
 		private typeCheckObjectCreationExpression(callEx, context);
 		private postOverloadResolutionDiagnostics(diagnostic, additionalResults, context);
 		private computeObjectCreationExpressionSymbol(callEx, context, additionalResults);
-		private instantiateSignatureInContext(signatureA, signatureB, context);
+		private instantiateSignatureInContext(signatureAToInstantiate, contextualSignatureB, context, shouldFixContextualSignatureParameterTypes);
 		private resolveCastExpression(assertionExpression, context);
 		private typeCheckCastExpression(assertionExpression, context, typeAssertionType);
 		private resolveAssignmentExpression(binaryExpression, context);
 		private getInstanceTypeForAssignment(lhs, type, context);
-		public widenType(type: PullTypeSymbol, ast?: AST, context?: PullTypeResolutionContext): PullTypeSymbol;
+		public widenType(type: PullTypeSymbol, ast: AST, context: PullTypeResolutionContext): PullTypeSymbol;
+		private widenArrayType(type, ast, context);
+		private widenObjectLiteralType(type, ast, context);
+		private needsToWidenObjectLiteralType(type, ast, context);
 		public findBestCommonType(collection: IPullTypeCollection, context: PullTypeResolutionContext, comparisonInfo?: TypeComparisonInfo): PullTypeSymbol;
 		private typeIsBestCommonTypeCandidate(candidateType, collection, context);
-		private typesAreIdenticalInEnclosingTypes(t1, t2, t1EnclosingType, t2EnclosingType, val?);
-		public typesAreIdentical(t1: PullTypeSymbol, t2: PullTypeSymbol, val?: AST): boolean;
-		private signatureGroupsAreIdentical(sg1, sg2);
-		public signaturesAreIdentical(s1: PullSignatureSymbol, s2: PullSignatureSymbol, includingReturnType?: boolean): boolean;
-		private substituteUpperBoundForType(type);
+		private typesAreIdenticalInEnclosingTypes(t1, t2, context);
+		private typesAreIdenticalWithNewEnclosingTypes(t1, t2, context);
+		public typesAreIdentical(t1: PullTypeSymbol, t2: PullTypeSymbol, context: PullTypeResolutionContext): boolean;
+		private typesAreIdenticalWorker(t1, t2, context);
+		private propertiesAreIdentical(propertySymbol1, propertySymbol2, context);
+		private propertiesAreIdenticalWithNewEnclosingTypes(type1, type2, property1, property2, context);
+		private signatureGroupsAreIdentical(sg1, sg2, context);
+		private typeParametersAreIdentical(tp1, tp2, context);
+		private typeParametersAreIdenticalWorker(tp1, tp2, context);
+		private setTypeParameterIdentity(tp1, tp2, val);
+		public signaturesAreIdenticalWithNewEnclosingTypes(s1: PullSignatureSymbol, s2: PullSignatureSymbol, context: PullTypeResolutionContext, includingReturnType?: boolean): boolean;
+		private signaturesAreIdentical(s1, s2, context, includingReturnType?);
+		public signaturesAreIdenticalWorker(s1: PullSignatureSymbol, s2: PullSignatureSymbol, context: PullTypeResolutionContext, includingReturnType?: boolean): boolean;
+		private signatureTypeParametersParametersAndReturnTypesAreIdentical(s1, s2, context, includingReturnType?);
+		public signatureReturnTypesAreIdentical(s1: PullSignatureSymbol, s2: PullSignatureSymbol, context: PullTypeResolutionContext): boolean;
 		private symbolsShareDeclaration(symbol1, symbol2);
-		private sourceExtendsTarget(source, target, context);
 		private sourceIsSubtypeOfTarget(source, target, ast, context, comparisonInfo?, isComparingInstantiatedSignatures?);
-		private sourceMembersAreSubtypeOfTargetMembers(source, target, ast, context, comparisonInfo, isComparingInstantiatedSignatures?);
-		private sourcePropertyIsSubtypeOfTargetProperty(source, target, sourceProp, targetProp, ast, context, comparisonInfo, isComparingInstantiatedSignatures?);
-		private sourceCallSignaturesAreSubtypeOfTargetCallSignatures(source, target, ast, context, comparisonInfo, isComparingInstantiatedSignatures?);
-		private sourceConstructSignaturesAreSubtypeOfTargetConstructSignatures(source, target, ast, context, comparisonInfo, isComparingInstantiatedSignatures?);
-		private sourceIndexSignaturesAreSubtypeOfTargetIndexSignatures(source, target, ast, context, comparisonInfo, isComparingInstantiatedSignatures?);
-		private typeIsSubtypeOfFunction(source, ast, context);
-		private signatureIsSubtypeOfTarget(s1, s2, ast, context, comparisonInfo?, isComparingInstantiatedSignatures?);
+		private sourceMembersAreAssignableToTargetMembers(source, target, ast, context, comparisonInfo, isComparingInstantiatedSignatures?);
+		private sourcePropertyIsAssignableToTargetProperty(source, target, sourceProp, targetProp, ast, context, comparisonInfo, isComparingInstantiatedSignatures?);
+		private sourceCallSignaturesAreAssignableToTargetCallSignatures(source, target, ast, context, comparisonInfo, isComparingInstantiatedSignatures?);
+		private sourceConstructSignaturesAreAssignableToTargetConstructSignatures(source, target, ast, context, comparisonInfo, isComparingInstantiatedSignatures?);
+		private sourceIndexSignaturesAreAssignableToTargetIndexSignatures(source, target, ast, context, comparisonInfo, isComparingInstantiatedSignatures?);
+		private typeIsAssignableToFunction(source, ast, context);
+		private signatureIsAssignableToTarget(s1, s2, ast, context, comparisonInfo?, isComparingInstantiatedSignatures?);
 		private sourceIsAssignableToTarget(source, target, ast, context, comparisonInfo?, isComparingInstantiatedSignatures?);
-		private signatureIsAssignableToTarget(s1, s2, ast, context, comparisonInfo, isComparingInstantiatedSignatures?);
+		private sourceIsAssignableToTargetWithNewEnclosingTypes(source, target, ast, context, comparisonInfo?, isComparingInstantiatedSignatures?);
 		private getSymbolForRelationshipCheck(symbol);
-		private sourceIsRelatableToTargetInEnclosingTypes(source, target, sourceEnclosingType, targetEnclosingType, assignableTo, comparisonCache, ast, context, comparisonInfo, isComparingInstantiatedSignatures);
+		private sourceIsRelatableToTargetInEnclosingTypes(source, target, assignableTo, comparisonCache, ast, context, comparisonInfo, isComparingInstantiatedSignatures);
+		private sourceIsRelatableToTargetWithNewEnclosingTypes(source, target, assignableTo, comparisonCache, ast, context, comparisonInfo, isComparingInstantiatedSignatures);
+		private sourceIsRelatableToTargetInCache(source, target, comparisonCache, comparisonInfo);
 		private sourceIsRelatableToTarget(source, target, assignableTo, comparisonCache, ast, context, comparisonInfo, isComparingInstantiatedSignatures);
+		private isSourceTypeParameterConstrainedToTargetTypeParameter(source, target);
+		private sourceIsRelatableToTargetWorker(source, target, sourceSubstitution, assignableTo, comparisonCache, ast, context, comparisonInfo, isComparingInstantiatedSignatures);
 		private sourceMembersAreRelatableToTargetMembers(source, target, assignableTo, comparisonCache, ast, context, comparisonInfo, isComparingInstantiatedSignatures);
 		private infinitelyExpandingSourceTypeIsRelatableToTargetType(sourceType, targetType, assignableTo, comparisonCache, ast, context, comparisonInfo, isComparingInstantiatedSignatures);
-		private infinitelyExpandingTypesAreIdentical(sourceType, targetType);
+		private infinitelyExpandingTypesAreIdentical(sourceType, targetType, context);
 		private sourcePropertyIsRelatableToTargetProperty(source, target, sourceProp, targetProp, assignableTo, comparisonCache, ast, context, comparisonInfo, isComparingInstantiatedSignatures);
 		private sourceCallSignaturesAreRelatableToTargetCallSignatures(source, target, assignableTo, comparisonCache, ast, context, comparisonInfo, isComparingInstantiatedSignatures);
 		private sourceConstructSignaturesAreRelatableToTargetConstructSignatures(source, target, assignableTo, comparisonCache, ast, context, comparisonInfo, isComparingInstantiatedSignatures);
 		private sourceIndexSignaturesAreRelatableToTargetIndexSignatures(source, target, assignableTo, comparisonCache, ast, context, comparisonInfo, isComparingInstantiatedSignatures);
-		private signatureGroupIsRelatableToTarget(sourceSG, targetSG, assignableTo, comparisonCache, ast, context, comparisonInfo, isComparingInstantiatedSignatures);
+		private signatureGroupIsRelatableToTarget(source, target, sourceSG, targetSG, assignableTo, comparisonCache, ast, context, comparisonInfo, isComparingInstantiatedSignatures);
 		private signatureIsRelatableToTarget(sourceSig, targetSig, assignableTo, comparisonCache, ast, context, comparisonInfo, isComparingInstantiatedSignatures);
+		private signatureIsRelatableToTargetWorker(sourceSig, targetSig, assignableTo, comparisonCache, ast, context, comparisonInfo, isComparingInstantiatedSignatures);
 		private resolveOverloads(application, group, haveTypeArgumentsAtCallSite, context, diagnostics);
 		private getCallTargetErrorSpanAST(callEx);
 		private overloadHasCorrectArity(signature, args);
@@ -8005,23 +6622,27 @@ declare module "typescript-api" {
 		private overloadIsApplicableForArrayLiteralArgument(paramType, arg, argIndex, context, comparisonInfo);
 		private overloadIsApplicableForOtherArgument(paramType, arg, argIndex, context, comparisonInfo);
 		private overloadIsApplicableForArgumentHelper(paramType, argSym, argumentIndex, comparisonInfo, arg, context);
-		private inferArgumentTypesForSignature(signature, argContext, comparisonInfo, context);
+		private inferArgumentTypesForSignature(argContext, comparisonInfo, context);
 		private typeParametersAreInScopeAtArgumentList(typeParameters, args);
-		private relateTypeToTypeParametersInEnclosingType(expressionType, parameterType, expressionTypeEnclosingType, parameterTypeEnclosingType, shouldFix, argContext, context);
-		private relateTypeToTypeParameters(expressionType, parameterType, shouldFix, argContext, context);
-		private relateTypeArgumentsOfTypeToTypeParameters(expressionType, parameterType, shouldFix, argContext, context);
-		private relateInifinitelyExpandingTypeToTypeParameters(expressionType, parameterType, shouldFix, argContext, context);
+		private relateTypeToTypeParametersInEnclosingType(expressionType, parameterType, argContext, context);
+		public relateTypeToTypeParametersWithNewEnclosingTypes(expressionType: PullTypeSymbol, parameterType: PullTypeSymbol, argContext: TypeArgumentInferenceContext, context: PullTypeResolutionContext): void;
+		public relateTypeToTypeParameters(expressionType: PullTypeSymbol, parameterType: PullTypeSymbol, argContext: TypeArgumentInferenceContext, context: PullTypeResolutionContext): void;
+		private relateTypeArgumentsOfTypeToTypeParameters(expressionType, parameterType, argContext, context);
+		private relateInifinitelyExpandingTypeToTypeParameters(expressionType, parameterType, argContext, context);
 		private relateFunctionSignatureToTypeParameters(expressionSignature, parameterSignature, argContext, context);
-		private relateObjectTypeToTypeParameters(objectType, parameterType, shouldFix, argContext, context);
-		private relateArrayTypeToTypeParameters(argArrayType, parameterArrayType, shouldFix, argContext, context);
+		private relateObjectTypeToTypeParameters(objectType, parameterType, argContext, context);
+		private relateSignatureGroupToTypeParameters(argumentSignatures, parameterSignatures, signatureKind, argContext, context);
+		private alterPotentialGenericFunctionTypeToInstantiatedFunctionTypeForTypeArgumentInference(expressionSymbol, context);
+		private isFunctionTypeWithExactlyOneCallSignatureAndNoOtherMembers(type, callSignatureShouldBeGeneric);
 		public instantiateTypeToAny(typeToSpecialize: PullTypeSymbol, context: PullTypeResolutionContext): PullTypeSymbol;
+		public instantiateSignatureToAny(signature: PullSignatureSymbol): PullSignatureSymbol;
 		static globalTypeCheckPhase: number;
 		static typeCheck(compilationSettings: ImmutableCompilationSettings, semanticInfoChain: SemanticInfoChain, document: Document): void;
 		private validateVariableDeclarationGroups(enclosingDecl, context);
 		private typeCheckFunctionOverloads(funcDecl, context, signature?, allSignatures?);
 		private checkSymbolPrivacy(declSymbol, symbol, privacyErrorReporter);
 		private checkTypePrivacyOfSignatures(declSymbol, signatures, privacyErrorReporter);
-		private typeParameterOfTypeDeclarationPrivacyErrorReporter(classOrInterface, indexOfTypeParameter, typeParameter, symbol, context);
+		private typeParameterOfTypeDeclarationPrivacyErrorReporter(classOrInterface, typeParameterAST, typeParameter, symbol, context);
 		private baseListPrivacyErrorReporter(classOrInterface, declSymbol, baseAst, isExtendedType, symbol, context);
 		private variablePrivacyErrorReporter(declAST, declSymbol, symbol, context);
 		private checkFunctionTypePrivacy(funcDeclAST, isStatic, typeParameters, parameters, returnTypeAnnotation, block, context);
@@ -8040,11 +6661,12 @@ declare module "typescript-api" {
 		private typeCheckIfTypeMemberPropertyOkToOverride(typeSymbol, extendedType, typeMember, extendedTypeMember, enclosingDecl, comparisonInfo);
 		private typeCheckIfTypeExtendsType(classOrInterface, name, typeSymbol, extendedType, enclosingDecl, context);
 		private typeCheckIfClassImplementsType(classDecl, classSymbol, implementedType, enclosingDecl, context);
-		private hasClassTypeSymbolConflictAsValue(valueDeclAST, typeSymbol, enclosingDecl, context);
+		private computeValueSymbolFromAST(valueDeclAST, context);
+		private hasClassTypeSymbolConflictAsValue(baseDeclAST, typeSymbol, enclosingDecl, context);
 		private typeCheckBase(classOrInterface, name, typeSymbol, baseDeclAST, isExtendedType, enclosingDecl, context);
 		private typeCheckBases(classOrInterface, name, heritageClauses, typeSymbol, enclosingDecl, context);
 		private checkTypeCompatibilityBetweenBases(name, typeSymbol, context);
-		private checkNamedPropertyTypeIdentityBetweenBases(interfaceName, interfaceSymbol, baseTypeSymbol, inheritedMembersMap, context);
+		private checkNamedPropertyIdentityBetweenBases(interfaceName, interfaceSymbol, baseTypeSymbol, inheritedMembersMap, context);
 		private checkIndexSignatureIdentityBetweenBases(interfaceName, interfaceSymbol, baseTypeSymbol, allInheritedSignatures, derivedTypeHasOwnNumberSignature, derivedTypeHasOwnStringSignature, context);
 		private checkInheritedMembersAgainstInheritedIndexSignatures(interfaceName, interfaceSymbol, inheritedIndexSignatures, inheritedMembers, context);
 		private checkThatInheritedNumberSignatureIsSubtypeOfInheritedStringSignature(interfaceName, interfaceSymbol, inheritedIndexSignatures, context);
@@ -8054,8 +6676,9 @@ declare module "typescript-api" {
 		private getEnclosingDeclForAST(ast);
 		private getEnclosingSymbolForAST(ast);
 		private checkForPrivateMemberAccess(name, expressionType, resolvedName, context);
-		public instantiateType(type: PullTypeSymbol, typeParameterArgumentMap: PullTypeSymbol[], instantiateFunctionTypeParameters?: boolean): PullTypeSymbol;
-		public instantiateSignature(signature: PullSignatureSymbol, typeParameterArgumentMap: PullTypeSymbol[], instantiateFunctionTypeParameters?: boolean): PullSignatureSymbol;
+		public instantiateType(type: PullTypeSymbol, typeParameterArgumentMap: TypeArgumentMap): PullTypeSymbol;
+		public instantiateTypeParameter(typeParameter: PullTypeParameterSymbol, typeParameterArgumentMap: TypeArgumentMap): PullTypeParameterSymbol;
+		public instantiateSignature(signature: PullSignatureSymbol, typeParameterArgumentMap: TypeArgumentMap): PullSignatureSymbol;
 	}
 	class TypeComparisonInfo {
 		public onlyCaptureFirstError: boolean;
@@ -8063,7 +6686,7 @@ declare module "typescript-api" {
 		public message: string;
 		public stringConstantVal: AST;
 		private indent;
-		constructor(sourceComparisonInfo?: TypeComparisonInfo);
+		constructor(sourceComparisonInfo?: TypeComparisonInfo, useSameIndent?: boolean);
 		private indentString();
 		public addMessage(message: string): void;
 	}
@@ -8114,7 +6737,7 @@ declare module "typescript-api" {
 		public getDocument(fileName: string): Document;
 		public lineMap(fileName: string): LineMap;
 		public fileNames(): string[];
-		private bindPrimitiveSymbol(decl, newSymbol);
+		private bindPrimitiveSymbol<TSymbol extends PullSymbol>(decl, newSymbol);
 		private addPrimitiveTypeSymbol(decl);
 		private addPrimitiveValueSymbol(decl, type);
 		private resetGlobalSymbols();
@@ -8153,25 +6776,31 @@ declare module "typescript-api" {
 		public setASTForDecl(decl: PullDecl, ast: AST): void;
 		public topLevelDecl(fileName: string): PullDecl;
 		public topLevelDecls(): PullDecl[];
-		public addDiagnosticFromAST(ast: AST, diagnosticKey: string, arguments?: any[]): void;
-		public diagnosticFromAST(ast: AST, diagnosticKey: string, arguments?: any[]): Diagnostic;
+		public addDiagnosticFromAST(ast: AST, diagnosticKey: string, _arguments?: any[], additionalLocations?: Location[]): void;
+		public diagnosticFromAST(ast: AST, diagnosticKey: string, _arguments?: any[], additionalLocations?: Location[]): Diagnostic;
+		public locationFromAST(ast: AST): Location;
+		public duplicateIdentifierDiagnosticFromAST(ast: AST, identifier: string, additionalLocationAST: AST): Diagnostic;
+		public addDuplicateIdentifierDiagnosticFromAST(ast: AST, identifier: string, additionalLocationAST: AST): void;
 	}
-	function getModuleNames(name: AST, result?: Identifier[]): Identifier[];
 	module DeclarationCreator {
 		function create(document: Document, semanticInfoChain: SemanticInfoChain, compilationSettings: ImmutableCompilationSettings): PullDecl;
 	}
 	class PullSymbolBinder {
 		private semanticInfoChain;
 		private declsBeingBound;
+		private inBindingOtherDeclsWalker;
 		constructor(semanticInfoChain: SemanticInfoChain);
 		private getParent(decl, returnInstanceType?);
 		private findDeclsInContext(startingDecl, declKind, searchGlobally);
 		private getExistingSymbol(decl, searchKind, parent);
 		private checkThatExportsMatch(decl, prevSymbol, reportError?);
+		private getIndexForInsertingSignatureAtEndOfEnclosingDeclInSignatureList(signature, currentSignatures);
 		private bindEnumDeclarationToPullSymbol(enumContainerDecl);
-		private bindEnumIndexerDeclsToPullSymbols(enumContainerDecl, enumContainerSymbol);
+		private bindEnumIndexerDeclsToPullSymbols(enumContainerSymbol);
+		private findExistingVariableSymbolForModuleValueDecl(decl);
 		private bindModuleDeclarationToPullSymbol(moduleContainerDecl);
 		private bindImportDeclaration(importDeclaration);
+		private ensurePriorDeclarationsAreBound(container, currentDecl);
 		private bindClassDeclarationToPullSymbol(classDecl);
 		private bindInterfaceDeclarationToPullSymbol(interfaceDecl);
 		private bindObjectTypeDeclarationToPullSymbol(objectDecl);
@@ -8185,16 +6814,22 @@ declare module "typescript-api" {
 		private bindFunctionExpressionToPullSymbol(functionExpressionDeclaration);
 		private bindFunctionTypeDeclarationToPullSymbol(functionTypeDeclaration);
 		private bindMethodDeclarationToPullSymbol(methodDeclaration);
-		private bindStaticPrototypePropertyOfClass(classTypeSymbol, constructorTypeSymbol);
+		private bindStaticPrototypePropertyOfClass(classAST, classTypeSymbol, constructorTypeSymbol);
 		private bindConstructorDeclarationToPullSymbol(constructorDeclaration);
 		private bindConstructSignatureDeclarationToPullSymbol(constructSignatureDeclaration);
 		private bindCallSignatureDeclarationToPullSymbol(callSignatureDeclaration);
 		private bindIndexSignatureDeclarationToPullSymbol(indexSignatureDeclaration);
 		private bindGetAccessorDeclarationToPullSymbol(getAccessorDeclaration);
 		private bindSetAccessorDeclarationToPullSymbol(setAccessorDeclaration);
+		private getDeclsToBind(decl);
+		private shouldBindDeclaration(decl);
 		public bindDeclToPullSymbol(decl: PullDecl): void;
+		private bindAllDeclsToPullSymbol(askedDecl);
+		private bindSingleDeclToPullSymbol(decl);
 	}
 	module PullHelpers {
+		function diagnosticFromDecl(decl: PullDecl, diagnosticKey: string, _arguments?: any[], additionalLocations?: Location[]): Diagnostic;
+		function resolveDeclaredSymbolToUseType(symbol: PullSymbol): void;
 		interface SignatureInfoForFuncDecl {
 			signature: PullSignatureSymbol;
 			allSignatures: PullSignatureSymbol[];
@@ -8214,12 +6849,50 @@ declare module "typescript-api" {
 		function typeSymbolsAreIdentical(a: PullTypeSymbol, b: PullTypeSymbol): boolean;
 		function getRootType(type: PullTypeSymbol): PullTypeSymbol;
 		function isSymbolLocal(symbol: PullSymbol): boolean;
+		function isExportedSymbolInClodule(symbol: PullSymbol): boolean;
+		function isSymbolDeclaredInScopeChain(symbol: PullSymbol, scopeSymbol: PullSymbol): boolean;
+		interface PullTypeSymbolStructureWalker {
+			memberSymbolWalk(memberSymbol: PullSymbol): boolean;
+			callSignatureWalk(signatureSymbol: PullSignatureSymbol): boolean;
+			constructSignatureWalk(signatureSymbol: PullSignatureSymbol): boolean;
+			indexSignatureWalk(signatureSymbol: PullSignatureSymbol): boolean;
+			signatureParameterWalk(parameterSymbol: PullSymbol): boolean;
+			signatureReturnTypeWalk(returnType: PullTypeSymbol): boolean;
+		}
+		function walkPullTypeSymbolStructure(typeSymbol: PullTypeSymbol, walker: PullTypeSymbolStructureWalker): void;
+		class OtherPullDeclsWalker {
+			private currentlyWalkingOtherDecls;
+			public walkOtherPullDecls(currentDecl: PullDecl, otherDecls: PullDecl[], callBack: (otherDecl: PullDecl) => void): void;
+		}
+	}
+	class WrapsTypeParameterCache {
+		private _wrapsTypeParameterCache;
+		public getWrapsTypeParameter(typeParameterArgumentMap: TypeArgumentMap): number;
+		public setWrapsTypeParameter(typeParameterArgumentMap: TypeArgumentMap, wrappingTypeParameterID: number): void;
+	}
+	module PullInstantiationHelpers {
+		class MutableTypeArgumentMap {
+			public typeParameterArgumentMap: TypeArgumentMap;
+			public createdDuplicateTypeArgumentMap: boolean;
+			constructor(typeParameterArgumentMap: TypeArgumentMap);
+			public ensureTypeArgumentCopy(): void;
+		}
+		function instantiateTypeArgument(resolver: PullTypeResolver, symbol: InstantiableSymbol, mutableTypeParameterMap: MutableTypeArgumentMap): void;
+		function cleanUpTypeArgumentMap(symbol: InstantiableSymbol, mutableTypeArgumentMap: MutableTypeArgumentMap): void;
+		function getAllowedToReferenceTypeParametersFromDecl(decl: PullDecl): PullTypeParameterSymbol[];
+		function createTypeParameterArgumentMap(typeParameters: PullTypeParameterSymbol[], typeArguments: PullTypeSymbol[]): TypeArgumentMap;
+		function updateTypeParameterArgumentMap(typeParameters: PullTypeParameterSymbol[], typeArguments: PullTypeSymbol[], typeParameterArgumentMap: TypeArgumentMap): TypeArgumentMap;
+		function updateMutableTypeParameterArgumentMap(typeParameters: PullTypeParameterSymbol[], typeArguments: PullTypeSymbol[], mutableMap: MutableTypeArgumentMap): void;
+		function twoTypesAreInstantiationsOfSameNamedGenericType(type1: PullTypeSymbol, type2: PullTypeSymbol): boolean;
 	}
 	enum GenerativeTypeClassification {
 		Unknown = 0,
 		Open = 1,
 		Closed = 2,
 		InfinitelyExpanding = 3,
+	}
+	interface TypeArgumentMap {
+		[n: number]: PullTypeSymbol;
 	}
 	class PullTypeReferenceSymbol extends PullTypeSymbol {
 		public referencedTypeSymbol: PullTypeSymbol;
@@ -8262,8 +6935,10 @@ declare module "typescript-api" {
 		public getKnownSpecializations(): PullTypeSymbol[];
 		public getTypeArguments(): PullTypeSymbol[];
 		public getTypeArgumentsOrTypeParameters(): PullTypeSymbol[];
-		public addCallSignature(callSignature: PullSignatureSymbol): void;
-		public addConstructSignature(constructSignature: PullSignatureSymbol): void;
+		public appendCallSignature(callSignature: PullSignatureSymbol): void;
+		public insertCallSignatureAtIndex(callSignature: PullSignatureSymbol, index: number): void;
+		public appendConstructSignature(callSignature: PullSignatureSymbol): void;
+		public insertConstructSignatureAtIndex(callSignature: PullSignatureSymbol, index: number): void;
 		public addIndexSignature(indexSignature: PullSignatureSymbol): void;
 		public hasOwnCallSignatures(): boolean;
 		public getCallSignatures(): PullSignatureSymbol[];
@@ -8279,7 +6954,6 @@ declare module "typescript-api" {
 		public getTypesThatExtendThisType(): PullTypeSymbol[];
 		public addTypeThatExplicitlyImplementsThisType(type: PullTypeSymbol): void;
 		public getTypesThatExplicitlyImplementThisType(): PullTypeSymbol[];
-		public hasBase(potentialBase: PullTypeSymbol, visited?: PullSymbol[]): boolean;
 		public isValidBaseKind(baseType: PullTypeSymbol, isExtendedType: boolean): boolean;
 		public findMember(name: string, lookInParent?: boolean): PullSymbol;
 		public findNestedType(name: string, kind?: PullElementKind): PullTypeSymbol;
@@ -8290,9 +6964,11 @@ declare module "typescript-api" {
 	}
 	var nSpecializationsCreated: number;
 	var nSpecializedSignaturesCreated: number;
+	var nSpecializedTypeParameterCreated: number;
 	class PullInstantiatedTypeReferenceSymbol extends PullTypeReferenceSymbol {
 		public referencedTypeSymbol: PullTypeSymbol;
 		private _typeParameterArgumentMap;
+		public isInstanceReferenceType: boolean;
 		private _instantiatedMembers;
 		private _allInstantiatedMemberNameCache;
 		private _instantiatedMemberNameCache;
@@ -8303,19 +6979,19 @@ declare module "typescript-api" {
 		private _instantiatedConstructorMethod;
 		private _instantiatedAssociatedContainerType;
 		private _isArray;
-		public isInstanceReferenceType: boolean;
 		public getIsSpecialized(): boolean;
 		private _generativeTypeClassification;
 		public getGenerativeTypeClassification(enclosingType: PullTypeSymbol): GenerativeTypeClassification;
 		public isArrayNamedTypeReference(): boolean;
 		public getElementType(): PullTypeSymbol;
 		public getReferencedTypeSymbol(): PullTypeSymbol;
-		static create(resolver: PullTypeResolver, type: PullTypeSymbol, typeParameterArgumentMap: PullTypeSymbol[], instantiateFunctionTypeParameters?: boolean): PullInstantiatedTypeReferenceSymbol;
-		constructor(referencedTypeSymbol: PullTypeSymbol, _typeParameterArgumentMap: PullTypeSymbol[]);
+		static create(resolver: PullTypeResolver, type: PullTypeSymbol, typeParameterArgumentMap: TypeArgumentMap): PullInstantiatedTypeReferenceSymbol;
+		constructor(referencedTypeSymbol: PullTypeSymbol, _typeParameterArgumentMap: TypeArgumentMap, isInstanceReferenceType: boolean);
 		public isGeneric(): boolean;
-		public getTypeParameterArgumentMap(): PullTypeSymbol[];
+		public getTypeParameterArgumentMap(): TypeArgumentMap;
 		public getTypeArguments(): PullTypeSymbol[];
 		public getTypeArgumentsOrTypeParameters(): PullTypeSymbol[];
+		private populateInstantiatedMemberFromReferencedMember(referencedMember);
 		public getMembers(): PullSymbol[];
 		public findMember(name: string, lookInParent?: boolean): PullSymbol;
 		public getAllMembers(searchDeclKind: PullElementKind, memberVisiblity: GetAllMembersVisiblity): PullSymbol[];
@@ -8324,7 +7000,19 @@ declare module "typescript-api" {
 		public getCallSignatures(): PullSignatureSymbol[];
 		public getConstructSignatures(): PullSignatureSymbol[];
 		public getIndexSignatures(): PullSignatureSymbol[];
-		public hasBase(potentialBase: PullTypeSymbol, visited?: PullSymbol[]): boolean;
+	}
+	class PullInstantiatedSignatureSymbol extends PullSignatureSymbol {
+		private _typeParameterArgumentMap;
+		public getTypeParameterArgumentMap(): TypeArgumentMap;
+		constructor(rootSignature: PullSignatureSymbol, _typeParameterArgumentMap: TypeArgumentMap);
+		public getIsSpecialized(): boolean;
+		public _getResolver(): PullTypeResolver;
+		public getTypeParameters(): PullTypeParameterSymbol[];
+		public getAllowedToReferenceTypeParameters(): PullTypeParameterSymbol[];
+	}
+	class PullInstantiatedTypeParameterSymbol extends PullTypeParameterSymbol {
+		constructor(rootTypeParameter: PullTypeSymbol, constraintType: PullTypeSymbol);
+		public _getResolver(): PullTypeResolver;
 	}
 	class SyntaxTreeToAstVisitor implements ISyntaxVisitor {
 		private fileName;
@@ -8487,9 +7175,16 @@ declare module "typescript-api" {
 		symbols: PullSymbol[];
 		enclosingScopeSymbol: PullSymbol;
 	}
+	enum EmitOutputResult {
+		Succeeded = 0,
+		FailedBecauseOfSyntaxErrors = 1,
+		FailedBecauseOfCompilerOptionsErrors = 2,
+		FailedToGenerateDeclarationsBecauseOfSemanticErrors = 3,
+	}
 	class EmitOutput {
 		public outputFiles: OutputFile[];
-		public diagnostics: Diagnostic[];
+		public emitOutputResult: EmitOutputResult;
+		constructor(emitOutputResult?: EmitOutputResult);
 	}
 	enum OutputFileType {
 		JavaScript = 0,
@@ -8522,7 +7217,6 @@ declare module "typescript-api" {
 		public addFile(fileName: string, scriptSnapshot: IScriptSnapshot, byteOrderMark: ByteOrderMark, version: number, isOpen: boolean, referencedFiles?: string[]): void;
 		public updateFile(fileName: string, scriptSnapshot: IScriptSnapshot, version: number, isOpen: boolean, textChangeRange: TextChangeRange): void;
 		public removeFile(fileName: string): void;
-		public _isDynamicModuleCompilation(): boolean;
 		public mapOutputFileName(document: Document, emitOptions: EmitOptions, extensionChanger: (fname: string, wholeFileNameReplaced: boolean) => string): string;
 		private writeByteOrderMarkForDocument(document);
 		static mapToDTSFileName(fileName: string, wholeFileNameReplaced: boolean): string;
@@ -8532,6 +7226,7 @@ declare module "typescript-api" {
 		public _emitDocumentDeclarations(document: Document, emitOptions: EmitOptions, onSingleFileEmitComplete: (files: OutputFile) => void, sharedEmitter: DeclarationEmitter): DeclarationEmitter;
 		public emitAllDeclarations(resolvePath: (path: string) => string): EmitOutput;
 		public emitDeclarations(fileName: string, resolvePath: (path: string) => string): EmitOutput;
+		public canEmitDeclarations(fileName: string): boolean;
 		static mapToFileNameExtension(extension: string, fileName: string, wholeFileNameReplaced: boolean): string;
 		static mapToJSFileName(fileName: string, wholeFileNameReplaced: boolean): string;
 		private emitDocumentWorker(document, emitOptions, emitter?);
@@ -8544,6 +7239,7 @@ declare module "typescript-api" {
 		private getSyntaxTree(fileName);
 		private getSourceUnit(fileName);
 		public getSemanticDiagnostics(fileName: string): Diagnostic[];
+		public getCompilerOptionsDiagnostics(resolvePath: (path: string) => string): Diagnostic[];
 		public resolveAllFiles(): void;
 		public getSymbolOfDeclaration(decl: PullDecl): PullSymbol;
 		private extractResolutionContextFromAST(resolver, ast, document, propagateContextualTypes);
@@ -8559,6 +7255,8 @@ declare module "typescript-api" {
 		public getDeclForAST(ast: AST): PullDecl;
 		public fileNames(): string[];
 		public topLevelDecl(fileName: string): PullDecl;
+		private static getLocationText(location);
+		static getFullDiagnosticText(diagnostic: Diagnostic): string;
 	}
 	function compareDataObjects(dst: any, src: any): boolean;
 	interface IFindFileResult {
@@ -8570,6 +7268,7 @@ declare module "typescript-api" {
 	}
 	interface IIO {
 		readFile(path: string, codepage: number): FileInformation;
+		appendFile(path: string, contents: string): void;
 		writeFile(path: string, contents: string, writeByteOrderMark: boolean): void;
 		deleteFile(path: string): void;
 		dir(path: string, re?: RegExp, options?: {
@@ -8672,85 +7371,6 @@ declare module "typescript-api" {
 		private resolvePathCache;
 		public resolvePath(path: string): string;
 	}
-	module Collections {
-		var DefaultHashTableCapacity: number;
-		class HashTable<TKey, TValue> {
-			private hash;
-			private entries;
-			private count;
-			constructor(capacity: number, hash: (k: TKey) => number);
-			public set(key: TKey, value: TValue): void;
-			public add(key: TKey, value: TValue): void;
-			public containsKey(key: TKey): boolean;
-			public get(key: TKey): TValue;
-			private computeHashCode(key);
-			private addOrSet(key, value, throwOnExistingEntry);
-			private findEntry(key, hashCode);
-			private addEntry(key, value, hashCode);
-			private grow();
-		}
-		function createHashTable<TKey, TValue>(capacity?: number, hash?: (k: TKey) => number): HashTable<TKey, TValue>;
-		function identityHashCode(value: any): number;
-		var DefaultStringTableCapacity: number;
-		class StringTable {
-			private entries;
-			private count;
-			constructor(capacity: number);
-			public addCharArray(key: number[], start: number, len: number): string;
-			private findCharArrayEntry(key, start, len, hashCode);
-			private addEntry(text, hashCode);
-			private grow();
-			private static textCharArrayEquals(text, array, start, length);
-		}
-		var DefaultStringTable: StringTable;
-	}
-	module TextFactory {
-		function createText(value: string): IText;
-	}
-	module SimpleText {
-		function fromString(value: string): ISimpleText;
-		function fromScriptSnapshot(scriptSnapshot: IScriptSnapshot): ISimpleText;
-	}
-	module TextUtilities {
-		interface ICharacterSequence {
-			charCodeAt(index: number): number;
-			length: number;
-		}
-		function parseLineStarts(text: ICharacterSequence): number[];
-		function getLengthOfLineBreakSlow(text: ICharacterSequence, index: number, c: number): number;
-		function getLengthOfLineBreak(text: ICharacterSequence, index: number): number;
-		function isAnyLineBreakCharacter(c: number): boolean;
-	}
-	module Indentation {
-		function columnForEndOfToken(token: ISyntaxToken, syntaxInformationMap: SyntaxInformationMap, options: FormattingOptions): number;
-		function columnForStartOfToken(token: ISyntaxToken, syntaxInformationMap: SyntaxInformationMap, options: FormattingOptions): number;
-		function columnForStartOfFirstTokenInLineContainingToken(token: ISyntaxToken, syntaxInformationMap: SyntaxInformationMap, options: FormattingOptions): number;
-		function columnForPositionInString(input: string, position: number, options: FormattingOptions): number;
-		function indentationString(column: number, options: FormattingOptions): string;
-		function indentationTrivia(column: number, options: FormattingOptions): ISyntaxTrivia;
-		function firstNonWhitespacePosition(value: string): number;
-	}
-	module SyntaxFacts {
-		function getTokenKind(text: string): SyntaxKind;
-		function getText(kind: SyntaxKind): string;
-		function isTokenKind(kind: SyntaxKind): boolean;
-		function isAnyKeyword(kind: SyntaxKind): boolean;
-		function isStandardKeyword(kind: SyntaxKind): boolean;
-		function isFutureReservedKeyword(kind: SyntaxKind): boolean;
-		function isFutureReservedStrictKeyword(kind: SyntaxKind): boolean;
-		function isAnyPunctuation(kind: SyntaxKind): boolean;
-		function isPrefixUnaryExpressionOperatorToken(tokenKind: SyntaxKind): boolean;
-		function isBinaryExpressionOperatorToken(tokenKind: SyntaxKind): boolean;
-		function getPrefixUnaryExpressionFromOperatorToken(tokenKind: SyntaxKind): SyntaxKind;
-		function getPostfixUnaryExpressionFromOperatorToken(tokenKind: SyntaxKind): SyntaxKind;
-		function getBinaryExpressionFromOperatorToken(tokenKind: SyntaxKind): SyntaxKind;
-		function getOperatorTokenFromBinaryExpression(tokenKind: SyntaxKind): SyntaxKind;
-		function isAnyDivideToken(kind: SyntaxKind): boolean;
-		function isAnyDivideOrRegularExpressionToken(kind: SyntaxKind): boolean;
-		function isDirectivePrologueElement(node: ISyntaxNodeOrToken): boolean;
-		function isUseStrictDirective(node: ISyntaxNodeOrToken): boolean;
-		function isIdentifierNameOrAnyKeyword(token: ISyntaxToken): boolean;
-	}
 	module Syntax {
 		var emptySeparatedList: ISeparatedSyntaxList;
 		function separatedList(nodes: ISyntaxNodeOrToken[]): ISeparatedSyntaxList;
@@ -8843,7 +7463,7 @@ declare module "typescript-api" {
 			elseClause(elseKeyword: ISyntaxToken, statement: IStatementSyntax): ElseClauseSyntax;
 			ifStatement(ifKeyword: ISyntaxToken, openParenToken: ISyntaxToken, condition: IExpressionSyntax, closeParenToken: ISyntaxToken, statement: IStatementSyntax, elseClause: ElseClauseSyntax): IfStatementSyntax;
 			expressionStatement(expression: IExpressionSyntax, semicolonToken: ISyntaxToken): ExpressionStatementSyntax;
-			constructorDeclaration(modifiers: ISyntaxList, constructorKeyword: ISyntaxToken, parameterList: ParameterListSyntax, block: BlockSyntax, semicolonToken: ISyntaxToken): ConstructorDeclarationSyntax;
+			constructorDeclaration(modifiers: ISyntaxList, constructorKeyword: ISyntaxToken, callSignature: CallSignatureSyntax, block: BlockSyntax, semicolonToken: ISyntaxToken): ConstructorDeclarationSyntax;
 			memberFunctionDeclaration(modifiers: ISyntaxList, propertyName: ISyntaxToken, callSignature: CallSignatureSyntax, block: BlockSyntax, semicolonToken: ISyntaxToken): MemberFunctionDeclarationSyntax;
 			getAccessor(modifiers: ISyntaxList, getKeyword: ISyntaxToken, propertyName: ISyntaxToken, parameterList: ParameterListSyntax, typeAnnotation: TypeAnnotationSyntax, block: BlockSyntax): GetAccessorSyntax;
 			setAccessor(modifiers: ISyntaxList, setKeyword: ISyntaxToken, propertyName: ISyntaxToken, parameterList: ParameterListSyntax, block: BlockSyntax): SetAccessorSyntax;
@@ -8930,7 +7550,7 @@ declare module "typescript-api" {
 			public elseClause(elseKeyword: ISyntaxToken, statement: IStatementSyntax): ElseClauseSyntax;
 			public ifStatement(ifKeyword: ISyntaxToken, openParenToken: ISyntaxToken, condition: IExpressionSyntax, closeParenToken: ISyntaxToken, statement: IStatementSyntax, elseClause: ElseClauseSyntax): IfStatementSyntax;
 			public expressionStatement(expression: IExpressionSyntax, semicolonToken: ISyntaxToken): ExpressionStatementSyntax;
-			public constructorDeclaration(modifiers: ISyntaxList, constructorKeyword: ISyntaxToken, parameterList: ParameterListSyntax, block: BlockSyntax, semicolonToken: ISyntaxToken): ConstructorDeclarationSyntax;
+			public constructorDeclaration(modifiers: ISyntaxList, constructorKeyword: ISyntaxToken, callSignature: CallSignatureSyntax, block: BlockSyntax, semicolonToken: ISyntaxToken): ConstructorDeclarationSyntax;
 			public memberFunctionDeclaration(modifiers: ISyntaxList, propertyName: ISyntaxToken, callSignature: CallSignatureSyntax, block: BlockSyntax, semicolonToken: ISyntaxToken): MemberFunctionDeclarationSyntax;
 			public getAccessor(modifiers: ISyntaxList, getKeyword: ISyntaxToken, propertyName: ISyntaxToken, parameterList: ParameterListSyntax, typeAnnotation: TypeAnnotationSyntax, block: BlockSyntax): GetAccessorSyntax;
 			public setAccessor(modifiers: ISyntaxList, setKeyword: ISyntaxToken, propertyName: ISyntaxToken, parameterList: ParameterListSyntax, block: BlockSyntax): SetAccessorSyntax;
@@ -9017,7 +7637,7 @@ declare module "typescript-api" {
 			public elseClause(elseKeyword: ISyntaxToken, statement: IStatementSyntax): ElseClauseSyntax;
 			public ifStatement(ifKeyword: ISyntaxToken, openParenToken: ISyntaxToken, condition: IExpressionSyntax, closeParenToken: ISyntaxToken, statement: IStatementSyntax, elseClause: ElseClauseSyntax): IfStatementSyntax;
 			public expressionStatement(expression: IExpressionSyntax, semicolonToken: ISyntaxToken): ExpressionStatementSyntax;
-			public constructorDeclaration(modifiers: ISyntaxList, constructorKeyword: ISyntaxToken, parameterList: ParameterListSyntax, block: BlockSyntax, semicolonToken: ISyntaxToken): ConstructorDeclarationSyntax;
+			public constructorDeclaration(modifiers: ISyntaxList, constructorKeyword: ISyntaxToken, callSignature: CallSignatureSyntax, block: BlockSyntax, semicolonToken: ISyntaxToken): ConstructorDeclarationSyntax;
 			public memberFunctionDeclaration(modifiers: ISyntaxList, propertyName: ISyntaxToken, callSignature: CallSignatureSyntax, block: BlockSyntax, semicolonToken: ISyntaxToken): MemberFunctionDeclarationSyntax;
 			public getAccessor(modifiers: ISyntaxList, getKeyword: ISyntaxToken, propertyName: ISyntaxToken, parameterList: ParameterListSyntax, typeAnnotation: TypeAnnotationSyntax, block: BlockSyntax): GetAccessorSyntax;
 			public setAccessor(modifiers: ISyntaxList, setKeyword: ISyntaxToken, propertyName: ISyntaxToken, parameterList: ParameterListSyntax, block: BlockSyntax): SetAccessorSyntax;
@@ -9083,11 +7703,9 @@ declare module "typescript-api" {
 		var emptyList: ISyntaxList;
 		function list(nodes: ISyntaxNodeOrToken[]): ISyntaxList;
 		class VariableWidthTokenWithNoTrivia implements ISyntaxToken {
-			private _sourceText;
-			private _fullStart;
+			private _fullText;
 			public tokenKind: SyntaxKind;
-			private _textOrWidth;
-			constructor(sourceText: ISimpleText, fullStart: number, kind: SyntaxKind, textOrWidth: any);
+			constructor(fullText: string, kind: SyntaxKind);
 			public clone(): ISyntaxToken;
 			public isNode(): boolean;
 			public isToken(): boolean;
@@ -9097,8 +7715,6 @@ declare module "typescript-api" {
 			public childCount(): number;
 			public childAt(index: number): ISyntaxElement;
 			public fullWidth(): number;
-			private start();
-			private end();
 			public width(): number;
 			public text(): string;
 			public fullText(): string;
@@ -9135,12 +7751,10 @@ declare module "typescript-api" {
 			public isUnaryExpression(): boolean;
 		}
 		class VariableWidthTokenWithLeadingTrivia implements ISyntaxToken {
-			private _sourceText;
-			private _fullStart;
+			private _fullText;
 			public tokenKind: SyntaxKind;
 			private _leadingTriviaInfo;
-			private _textOrWidth;
-			constructor(sourceText: ISimpleText, fullStart: number, kind: SyntaxKind, leadingTriviaInfo: number, textOrWidth: any);
+			constructor(fullText: string, kind: SyntaxKind, leadingTriviaInfo: number);
 			public clone(): ISyntaxToken;
 			public isNode(): boolean;
 			public isToken(): boolean;
@@ -9150,8 +7764,6 @@ declare module "typescript-api" {
 			public childCount(): number;
 			public childAt(index: number): ISyntaxElement;
 			public fullWidth(): number;
-			private start();
-			private end();
 			public width(): number;
 			public text(): string;
 			public fullText(): string;
@@ -9188,12 +7800,10 @@ declare module "typescript-api" {
 			public isUnaryExpression(): boolean;
 		}
 		class VariableWidthTokenWithTrailingTrivia implements ISyntaxToken {
-			private _sourceText;
-			private _fullStart;
+			private _fullText;
 			public tokenKind: SyntaxKind;
-			private _textOrWidth;
 			private _trailingTriviaInfo;
-			constructor(sourceText: ISimpleText, fullStart: number, kind: SyntaxKind, textOrWidth: any, trailingTriviaInfo: number);
+			constructor(fullText: string, kind: SyntaxKind, trailingTriviaInfo: number);
 			public clone(): ISyntaxToken;
 			public isNode(): boolean;
 			public isToken(): boolean;
@@ -9203,8 +7813,6 @@ declare module "typescript-api" {
 			public childCount(): number;
 			public childAt(index: number): ISyntaxElement;
 			public fullWidth(): number;
-			private start();
-			private end();
 			public width(): number;
 			public text(): string;
 			public fullText(): string;
@@ -9241,13 +7849,11 @@ declare module "typescript-api" {
 			public isUnaryExpression(): boolean;
 		}
 		class VariableWidthTokenWithLeadingAndTrailingTrivia implements ISyntaxToken {
-			private _sourceText;
-			private _fullStart;
+			private _fullText;
 			public tokenKind: SyntaxKind;
 			private _leadingTriviaInfo;
-			private _textOrWidth;
 			private _trailingTriviaInfo;
-			constructor(sourceText: ISimpleText, fullStart: number, kind: SyntaxKind, leadingTriviaInfo: number, textOrWidth: any, trailingTriviaInfo: number);
+			constructor(fullText: string, kind: SyntaxKind, leadingTriviaInfo: number, trailingTriviaInfo: number);
 			public clone(): ISyntaxToken;
 			public isNode(): boolean;
 			public isToken(): boolean;
@@ -9257,8 +7863,6 @@ declare module "typescript-api" {
 			public childCount(): number;
 			public childAt(index: number): ISyntaxElement;
 			public fullWidth(): number;
-			private start();
-			private end();
 			public width(): number;
 			public text(): string;
 			public fullText(): string;
@@ -9342,11 +7946,10 @@ declare module "typescript-api" {
 			public isUnaryExpression(): boolean;
 		}
 		class FixedWidthTokenWithLeadingTrivia implements ISyntaxToken {
-			private _sourceText;
-			private _fullStart;
+			private _fullText;
 			public tokenKind: SyntaxKind;
 			private _leadingTriviaInfo;
-			constructor(sourceText: ISimpleText, fullStart: number, kind: SyntaxKind, leadingTriviaInfo: number);
+			constructor(fullText: string, kind: SyntaxKind, leadingTriviaInfo: number);
 			public clone(): ISyntaxToken;
 			public isNode(): boolean;
 			public isToken(): boolean;
@@ -9356,8 +7959,6 @@ declare module "typescript-api" {
 			public childCount(): number;
 			public childAt(index: number): ISyntaxElement;
 			public fullWidth(): number;
-			private start();
-			private end();
 			public width(): number;
 			public text(): string;
 			public fullText(): string;
@@ -9394,11 +7995,10 @@ declare module "typescript-api" {
 			public isUnaryExpression(): boolean;
 		}
 		class FixedWidthTokenWithTrailingTrivia implements ISyntaxToken {
-			private _sourceText;
-			private _fullStart;
+			private _fullText;
 			public tokenKind: SyntaxKind;
 			private _trailingTriviaInfo;
-			constructor(sourceText: ISimpleText, fullStart: number, kind: SyntaxKind, trailingTriviaInfo: number);
+			constructor(fullText: string, kind: SyntaxKind, trailingTriviaInfo: number);
 			public clone(): ISyntaxToken;
 			public isNode(): boolean;
 			public isToken(): boolean;
@@ -9408,8 +8008,6 @@ declare module "typescript-api" {
 			public childCount(): number;
 			public childAt(index: number): ISyntaxElement;
 			public fullWidth(): number;
-			private start();
-			private end();
 			public width(): number;
 			public text(): string;
 			public fullText(): string;
@@ -9446,12 +8044,11 @@ declare module "typescript-api" {
 			public isUnaryExpression(): boolean;
 		}
 		class FixedWidthTokenWithLeadingAndTrailingTrivia implements ISyntaxToken {
-			private _sourceText;
-			private _fullStart;
+			private _fullText;
 			public tokenKind: SyntaxKind;
 			private _leadingTriviaInfo;
 			private _trailingTriviaInfo;
-			constructor(sourceText: ISimpleText, fullStart: number, kind: SyntaxKind, leadingTriviaInfo: number, trailingTriviaInfo: number);
+			constructor(fullText: string, kind: SyntaxKind, leadingTriviaInfo: number, trailingTriviaInfo: number);
 			public clone(): ISyntaxToken;
 			public isNode(): boolean;
 			public isToken(): boolean;
@@ -9461,8 +8058,6 @@ declare module "typescript-api" {
 			public childCount(): number;
 			public childAt(index: number): ISyntaxElement;
 			public fullWidth(): number;
-			private start();
-			private end();
 			public width(): number;
 			public text(): string;
 			public fullText(): string;
@@ -9498,8 +8093,6 @@ declare module "typescript-api" {
 			public isPostfixExpression(): boolean;
 			public isUnaryExpression(): boolean;
 		}
-		function fixedWidthToken(sourceText: ISimpleText, fullStart: number, kind: SyntaxKind, leadingTriviaInfo: number, trailingTriviaInfo: number): ISyntaxToken;
-		function variableWidthToken(sourceText: ISimpleText, fullStart: number, kind: SyntaxKind, leadingTriviaInfo: number, width: number, trailingTriviaInfo: number): ISyntaxToken;
 		function isExpression(token: ISyntaxToken): boolean;
 		function realizeToken(token: ISyntaxToken): ISyntaxToken;
 		function convertToIdentifierName(token: ISyntaxToken): ISyntaxToken;
@@ -9526,10 +8119,33 @@ declare module "typescript-api" {
 		function triviaList(trivia: ISyntaxTrivia[]): ISyntaxTriviaList;
 		var spaceTriviaList: ISyntaxTriviaList;
 	}
-	module Parser {
-		function parse(fileName: string, text: ISimpleText, isDeclaration: boolean, options: ParseOptions): SyntaxTree;
-		function incrementalParse(oldSyntaxTree: SyntaxTree, textChangeRange: TextChangeRange, newText: ISimpleText): SyntaxTree;
+	module SyntaxFacts {
+		function getTokenKind(text: string): SyntaxKind;
+		function getText(kind: SyntaxKind): string;
+		function isTokenKind(kind: SyntaxKind): boolean;
+		function isAnyKeyword(kind: SyntaxKind): boolean;
+		function isStandardKeyword(kind: SyntaxKind): boolean;
+		function isFutureReservedKeyword(kind: SyntaxKind): boolean;
+		function isFutureReservedStrictKeyword(kind: SyntaxKind): boolean;
+		function isAnyPunctuation(kind: SyntaxKind): boolean;
+		function isPrefixUnaryExpressionOperatorToken(tokenKind: SyntaxKind): boolean;
+		function isBinaryExpressionOperatorToken(tokenKind: SyntaxKind): boolean;
+		function getPrefixUnaryExpressionFromOperatorToken(tokenKind: SyntaxKind): SyntaxKind;
+		function getPostfixUnaryExpressionFromOperatorToken(tokenKind: SyntaxKind): SyntaxKind;
+		function getBinaryExpressionFromOperatorToken(tokenKind: SyntaxKind): SyntaxKind;
+		function getOperatorTokenFromBinaryExpression(tokenKind: SyntaxKind): SyntaxKind;
+		function isAnyDivideToken(kind: SyntaxKind): boolean;
+		function isAnyDivideOrRegularExpressionToken(kind: SyntaxKind): boolean;
+		function isDirectivePrologueElement(node: ISyntaxNodeOrToken): boolean;
+		function isUseStrictDirective(node: ISyntaxNodeOrToken): boolean;
+		function isIdentifierNameOrAnyKeyword(token: ISyntaxToken): boolean;
 	}
+}
+declare class Enumerator {
+	public atEnd(): boolean;
+	public moveNext(): boolean;
+	public item(): any;
+	constructor(o: any);
 }
 declare class FormattingOptions {
 	public useTabs: boolean;

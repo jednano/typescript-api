@@ -3,7 +3,7 @@ TypeScript API
 
 > TypeScript API exposed (includes definition file).
 
-This version is compatable with TypeScript 0.9.5.
+This version is compatable with TypeScript 1.0.
 
 [![Dependency Status][]](https://gemnasium.com/jedmao/typescript-api)
 [![NPM version][]](http://badge.fury.io/js/typescript-api)
